@@ -800,9 +800,36 @@ ul, ol {
 		.tabs .tab-pane .content-container p .content-context {}
 
 	/*===== Contact Style =====*/
+.footer-area .footer-contact .contact-container {
+	width:100%;
+	height: 500px;
+	background-image: url(../img/test0.jpg);
+	background-repeat: no-repeat; 
+	background-size: cover;
+		-webkit-mask-image: url(../img/test0.png);
+		mask-image: url(../img/test0.png);
+		-webkit-mask-position: center center;
+		mask-position: center center;
+		-webkit-mask-repeat: no-repeat;
+		mask-repeat: no-repeat;
+		-webkit-mask-size: 16000px 360px;
+		mask-size: 16000px 360px;
+		-webkit-animation: sprite-mask 5s steps(25) ease-in-out;
+          animation: sprite-mask 5s steps(25) ease-in-out;
+		-webkit-transition: all 300ms cubic-bezier(0.485, 0, 0.25, 1);
+		transition: all 300ms cubic-bezier(0.485, 0, 0.25, 1);
+		z-index: -1;}
+
+		@keyframes sprite-mask{
+			from {
+				-webkit-mask-position: 0 0px;
+				mask-position: 0 0px;}
+			to {
+				-webkit-mask-position: -16000px 0px;
+				mask-position: -16000px 0px; } }
 .footer-area .footer-contact .contact-container .contact-card {
 	width: 300px;
-	height: 550px;
+	height: 450px;
 	margin: 0 auto;
 	position: relative;
 	text-align: center; }
