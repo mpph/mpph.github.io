@@ -14,7 +14,7 @@ $( document ).ready(function() {
 	/* close navbar-collapse when a  clicked */
 	$('.navbar-toggler').click(function(e) {	
 			e.preventDefault();
-			updateMenuButton(); });
+			updateMenuButton(e); });
 	$('.navbar-nav a').click(function(e) {
         $('.navbar-nav li').removeClass('active');
 		$('.navbar-collapse').removeClass('show');
@@ -198,11 +198,11 @@ function scrollON(cN) {
 function getCurrentScroll() {
     return window.pageYOffset; }
 
-function updateMenuButton() {
+function updateMenuButton(e) {
 	$('.navbar-toggler').toggleClass('active');
 	$('.navbar-collapse').toggleClass('collapseOn');
 
-	if(!$('.navbar-toggler').hasClass('active')) {
+	if(!$('.navbar-toggler').hasClass('active') || !$(e.target).hasClass('.navbar-toggler')) {
 		$('.navbar-toggler span:nth-child(3)').addClass('lowestbarup');
 		setTimeout(function() {
 			$('.navbar-toggler span:nth-child(3)').removeClass('lowestbarup'); },550); } }
