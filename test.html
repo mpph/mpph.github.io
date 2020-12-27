@@ -27,130 +27,130 @@
    <![endif]-->
 
    <style type="text/css">
-@import url("https://fonts.googleapis.com/css?family=Sue+Ellen+Francisco");
-* {
-  box-sizing: border-box;
-}
-
-body {
-  padding: 1.875rem;
-  background-color: whitesmoke;
-  font-family: "Sue Ellen Francisco", serif;
-}
-
-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-auto-rows: 300px;
-  grid-gap: 1.875rem;
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
-figure {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  margin: 0px;
-  border-radius: 0.125rem;
-  transform: translateY(0);
-  transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), box-shadow 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-figure:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(220, 20, 60, 0.8);
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-figure:nth-child(2), figure:nth-child(4), figure:nth-child(7) {
-  grid-row: span 2;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: translateZ(0);
-  transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  padding: 1.5rem 2.25rem 1.5rem 1.125rem;
-  width: 100%;
-  color: white;
-  font-size: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: 0.03125rem;
-  z-index: 1;
-  opacity: 0;
-  transform: translateY(-12px) rotate(-3deg);
-  transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-figure:hover {
-  transform: translateY(-6px);
-  box-shadow: rgba(0, 0, 0, 0.5) 0 12px 24px -12px;
-}
-figure:hover:after {
-  opacity: 1;
-}
-figure:hover img {
-  transform: scale(1.05);
-}
-figure:hover figcaption {
-  opacity: 1;
-  transform: translateY(0) rotate(-3deg);
-}
+.p0{padding:0;}
+.portfolio__filter {border:1px solid #F1F1F1;border-radius:20px;width:100%;}
+.portfolio__filter .filter-button{display:inline-block;padding:10px 23px;background:transparent;border:none;color:#9B9B9B;letter-spacing:0;font-size:13px;cursor:pointer;font-weight:300;}
+.portfolio__filter .filter-button:hover, .portfolio__filter .filter-button:focus, .portfolio__filter .filter-button:active{background:#2E52C2;border-radius:20px;color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.3);}
+.portfolio__filter .filter-button:focus {outline:0;}
+.portfolio__filter{display:inline-block;text-align:center;margin:30px 0;}
+.portfolio__img img {width: 100%;height: 230px;object-fit: cover;padding: 3px 3px;}
+.btn__load {display: inline-block;margin:40px 0 0;width:100%;}
    </style>
-<script src="assets/js/jquery-ui-1.12.1.min.js"></script>
-<script src="assets/js/jquery-3.5.1.min.js"></script>
-<script>
 
+<script>
+$(document).ready(function () {
+
+    $(".filter-button").click(function () {
+        var value = $(this).attr('data-filter');
+
+        if (value == "all") {
+            $('.filter').show('1000');
+        }
+        else {
+            $(".filter").not('.' + value).hide('3000');
+            $('.filter').filter('.' + value).show('3000');
+
+        }
+    });
+
+    if ($(".filter-button").removeClass("active")) {
+        $(this).removeClass("active");
+    }
+    $(this).addClass("active");
+
+});
 </script>
 
 </head>
 <body>
-<section>
-  <figure><img src="https://images.unsplash.com/photo-1523978591478-c753949ff840?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=4a7ae67e32aeafa8fcef6002dc98dc01" alt="Mountains surrounding a body of water"/>
-    <figcaption>The water was freezing!</figcaption>
-  </figure>
-  <figure><img src="https://images.unsplash.com/photo-1504217051514-96afa06398be?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=4c2699a4a22cc550d845fdbc25b676d7" alt="Sun setting over the mountains"/>
-    <figcaption>The sunset was beautiful that day.</figcaption>
-  </figure>
-  <figure><img src="https://images.unsplash.com/photo-1430778643786-afad072a0bb1?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=a2f7f06ab7480af81b66d854ec7cfb90" alt="Countryside with tire tracks in grass"/>
-    <figcaption>We roamed the countryside and noticed these tracks in the grass. So we followed.</figcaption>
-  </figure>
-  <figure><img src="https://images.unsplash.com/photo-1448827067615-fa74e848e86c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=882a9906c73a6e21b7614adfa0080c11" alt="A terrifying close-up of an insect"/>
-    <figcaption>This was just terrifying. He wasn't that big...</figcaption>
-  </figure>
-  <figure><img src="https://images.unsplash.com/photo-1510020553968-30f966e1ec9e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=b06f39fc12490ec16b4603f87413a9d8" alt="Dog looking out car window"/>
-    <figcaption>Benson looking pensive as usual.</figcaption>
-  </figure>
-  <figure><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=b5d101f72e23afc7e5d667ad09d555ad" alt="Person on mountaintop"/>
-    <figcaption>We got lost for hours.</figcaption>
-  </figure>
-  <figure><img src="https://images.unsplash.com/photo-1520247478381-4d32def223c1?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=8b4f951c5fb787428647e61369f23aa3" alt="Birds eye view of ocean waves"/>
-    <figcaption>I jumped from the cliffside and plummeted deep into the waves.</figcaption>
-  </figure>
-  <figure><img src="https://images.unsplash.com/photo-1507146426996-ef05306b995a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=8f37819758fae3fecda8434f24eaaea0" alt="A cute golden retriever puppy"/>
-    <figcaption>We met this cute little guy. Benson was not amused!</figcaption>
-  </figure>
-  <figure><img src="https://images.unsplash.com/photo-1450045439515-ff27c2f2e6b1?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ&amp;s=97a25f2cb9d2cc37987223a2ca31ad3c" alt="Whale fin emerging from ocean"/>
-    <figcaption>Whale watching... or were they watching us?</figcaption>
-  </figure>
-</section>
+<div class="section">
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12 text-center">
+              <div class="section__title">
+                  <h3>Gallary Filter</h3>
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, distinctio.</p>
+              </div>
+          </div>
+      </div>
+          
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="portfolio__filter filter__home">
+              <button class="filter-button" data-filter="all">All</button>                   
+              <button class="filter-button" data-filter="first">First</button> 
+              <button class="filter-button" data-filter="second">Second</button>
+            <button class="filter-button" data-filter="third">Third</button>
+              <button class="filter-button" data-filter="fourth">Fourth</button>
+              <button class="filter-button" data-filter="fifth">Fifth</button> 
+              <button class="filter-button" data-filter="sixth">Sixth</button>
+              <button class="filter-button" data-filter="seventh">Seventh</button>
+          </div>
+          <div class="portfolio__img">
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 Second">                  
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">                  
+                  <img src="http://via.placeholder.com/350x150" alt="">                  
+                </a>             
+              </div>                        
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 Second">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                 <img src="http://via.placeholder.com/350x150" alt="">
+                </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fifth">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fifth">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fifth">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 first">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 first">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 first">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 sixth">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fourth">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fourth">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                <img src="http://via.placeholder.com/350x150" alt="">
+              </a>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 seventh">
+                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
+                  <img src="http://via.placeholder.com/350x150" alt="">
+                </a>
+              </div>            
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </body>
 </html>
