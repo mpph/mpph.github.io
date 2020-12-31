@@ -143,14 +143,14 @@ function AbilityCircle(cN){
 
 /*======================Portfolio============================*/
 function popLayerEffect(target){
-	$('.p-Layer').css('display','block');
+	$('.p-layer').css('display','block');
 	$('body').css('overflow','hidden');
 
 	$('.p-layer-container').load('https://mpph.github.io/' + target);
 
-	$('.p-layer-close').click(function(e){
+	$('.p-layer-bg').click(function(e){
 		$('.p-layer-container').empty();
-		$('.p-Layer').css('display','none');
+		$('.p-layer').css('display','none');
 		$('body').css('overflow',''); }); }
 /*======================/Portfolio============================*/
 
