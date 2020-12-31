@@ -36,7 +36,7 @@ $(document).ready(function() {
 			$(".dark").fadeIn();
 			$(".lightbox").fadeIn("slow");
 			$(".next").fadeIn("slow");
-			$(".prev").fadeIn("slow");});
+			$(".prev").fadeIn("slow"); });
 
 
 		$(".lightbox").click(function(e){
