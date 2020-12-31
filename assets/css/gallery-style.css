@@ -28,6 +28,10 @@ a:hover {
 			cursor: pointer;
 			font-weight: 300; }
 
+			@media only screen and (max-width: 433px) {
+				.portfolio-filter .filter-button {
+					padding: 10px 16px; } }
+
 		.portfolio-filter .filter-button:hover {
 			background: #2E52C2;
 			border-radius: 20px;
