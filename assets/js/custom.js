@@ -79,9 +79,10 @@ $( document ).ready(function() {
 	/* Portfolio event */
 	$('.p-click').click(function(e){
 		e.preventDefault();
-		
-		if($('.p-click').hasClass('p-dsigns')) {
-			target = 'dsigns';
+		var target ='';
+
+		if($('.p-click').hasClass('p-details')) {
+			target = 'designs';
 		} else if ($('.p-click').hasClass('p-animations')) {
 			target = 'animations';
 		} else if ($('.p-click').hasClass('p-videos')) {
