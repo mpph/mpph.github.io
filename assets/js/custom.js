@@ -82,13 +82,14 @@ $( document ).ready(function() {
 		var target ='';
 
 		if($('.p-click').hasClass('p-details')) {
-			target = 'designs';
+			target = 'designs.html';
 		} else if ($('.p-click').hasClass('p-animations')) {
-			target = 'animations';
+			target = 'animations.html';
 		} else if ($('.p-click').hasClass('p-videos')) {
-			target = 'videos'; }
+			target = 'videos.html'; }
 
-		popLayerEffect(target); });
+		$('.p-layer-container').load('https://mpph.github.io/' + target); 
+		popLayerEffect(); });
 	
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -142,11 +143,9 @@ function AbilityCircle(cN){
 
 
 /*======================Portfolio============================*/
-function popLayerEffect(target){
+function popLayerEffect(){
 	$('.p-Layer').css('display','block');
 	$('body').css('overflow','hidden');
-
-    $('.p-layer-container').load('https://mpph.github.io/' + target + '.html'); 
 
 	$('.p-layer-close').click(function(e){
 		$('.p-Layer').css('display','none');
