@@ -1,156 +1,28 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="백성민">
-    <meta name="description" content="백성민의 포트폴리오 사이트">
-    <meta name="keywords" content="웹접근성, 반응형사이트, HTML5, JavaScript, WEB">
-    <title>PORTFOLIO</title>
-    
-	<!--====== Bootstrap CSS ======-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<!--====== Magnific Popup CSS ======-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-	<!--====== Font Awesome CSS ======-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<!--====== Default CSS ======-->
-    <link rel="stylesheet" href="assets/css/default.css">
+	<div class="gallery">
+		<div class="container">
+			<div class="portfolio-filter filter-home">
+				<a class="filter-button filter-button-active" data-filter="all">All</a>
+				<a class="filter-button" data-filter="detail">Detail</a> 
+				<a class="filter-button" data-filter="logo">Logo</a>
+				<a class="filter-button" data-filter="package">package</a>
+			</div>
 
-    <!-- HTLM5shiv ie6~8 -->
-    <!--[if lt IE 9]> 
-        <script src="assets/js/html5shiv.min.js"></script>
-        <script type="text/javascript">
-            alert("현재 브라우저는 지원하지 않습니다. 크롬 브라우저를 추천합니다.!");
-        </script>
-   <![endif]-->
+			<div class="gallery-grid">
+				<div class="gallery-item filter detail"><img src="assets/img/t.jpg"/></div>
+				<div class="gallery-item filter logo"><img src="assets/img/t1.jpg"/></div>
+				<div class="gallery-item filter detail"><img src="assets/img/t2.jpg"/></div>
+				<div class="gallery-item filter logo"><img src="assets/img/t3.jpg"/></div>
+				<div class="gallery-item filter logo"><img src="assets/img/t4.jpg"/></div>
+				<div class="gallery-item filter detail"><img src="assets/img/t5.png"/></div>
+				<div class="gallery-item filter logo"><img src="assets/img/t6.jpg"/></div>
+				<div class="gallery-item filter detail"><img src="assets/img/t7.jpg"/></div>
+				<div class="gallery-item filter detail"><img src="assets/img/t1.jpg"/></div>
+				<div class="gallery-item filter logo"><img src="assets/img/t3.jpg"/></div>
+			</div>
 
-   <style type="text/css">
-.p0{padding:0;}
-.portfolio__filter {border:1px solid #F1F1F1;border-radius:20px;width:100%;}
-.portfolio__filter .filter-button{display:inline-block;padding:10px 23px;background:transparent;border:none;color:#9B9B9B;letter-spacing:0;font-size:13px;cursor:pointer;font-weight:300;}
-.portfolio__filter .filter-button:hover, .portfolio__filter .filter-button:focus, .portfolio__filter .filter-button:active{background:#2E52C2;border-radius:20px;color:#fff;box-shadow:0 2px 4px rgba(0,0,0,.3);}
-.portfolio__filter .filter-button:focus {outline:0;}
-.portfolio__filter{display:inline-block;text-align:center;margin:30px 0;}
-.portfolio__img img {width: 100%;height: 230px;object-fit: cover;padding: 3px 3px;}
-.btn__load {display: inline-block;margin:40px 0 0;width:100%;}
-   </style>
-
-<script>
-$(document).ready(function () {
-
-    $(".filter-button").click(function () {
-        var value = $(this).attr('data-filter');
-
-        if (value == "all") {
-            $('.filter').show('1000');
-        }
-        else {
-            $(".filter").not('.' + value).hide('3000');
-            $('.filter').filter('.' + value).show('3000');
-
-        }
-    });
-
-    if ($(".filter-button").removeClass("active")) {
-        $(this).removeClass("active");
-    }
-    $(this).addClass("active");
-
-});
-</script>
-
-</head>
-<body>
-<div class="section">
-  <div class="container">
-      <div class="row">
-          <div class="col-xs-12 text-center">
-              <div class="section__title">
-                  <h3>Gallary Filter</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, distinctio.</p>
-              </div>
-          </div>
-      </div>
-          
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="portfolio__filter filter__home">
-              <button class="filter-button" data-filter="all">All</button>                   
-              <button class="filter-button" data-filter="first">First</button> 
-              <button class="filter-button" data-filter="second">Second</button>
-            <button class="filter-button" data-filter="third">Third</button>
-              <button class="filter-button" data-filter="fourth">Fourth</button>
-              <button class="filter-button" data-filter="fifth">Fifth</button> 
-              <button class="filter-button" data-filter="sixth">Sixth</button>
-              <button class="filter-button" data-filter="seventh">Seventh</button>
-          </div>
-          <div class="portfolio__img">
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 Second">                  
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">                  
-                  <img src="http://via.placeholder.com/350x150" alt="">                  
-                </a>             
-              </div>                        
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 Second">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                 <img src="http://via.placeholder.com/350x150" alt="">
-                </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fifth">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fifth">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fifth">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 first">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 first">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 first">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 sixth">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fourth">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 fourth">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                <img src="http://via.placeholder.com/350x150" alt="">
-              </a>
-              </div>
-              <div class="col-xs-12 col-sm-6 col-md-3 filter p0 seventh">
-                <a href="http://via.placeholder.com/350x150" data-fancybox="gallery">
-                  <img src="http://via.placeholder.com/350x150" alt="">
-                </a>
-              </div>            
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>
-</body>
-</html>
+		</div>
+	</div>
+	<div class="dark"></div>
+	<div class="lightbox"></div>
+	<div class="prev"><i class="fas fa-angle-left prev-item"></i></div>
+	<div class="next"><i class="fas fa-angle-right next-item"></i></div>
