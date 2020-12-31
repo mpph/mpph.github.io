@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-
+	
 	/* Progress */
 	screenOut();
 
@@ -26,6 +26,8 @@ $( document ).ready(function() {
 					$('.navbar-toggler').addClass('collapsed');},100); } });
 
 	/* Scroll event */
+	scrolling();
+
     $(window).scroll(function() {
         var scroll = getCurrentScroll();
 
@@ -87,9 +89,8 @@ $( document ).ready(function() {
 			target = 'animations.html';
 		} else if ($(this).hasClass('p-videos')) {
 			target = 'videos.html'; }
-
-		$('.p-layer-container').load('https://mpph.github.io/' + target); 
-		popLayerEffect(); });
+			
+		popLayerEffect(target); });
 	
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -143,11 +144,14 @@ function AbilityCircle(cN){
 
 
 /*======================Portfolio============================*/
-function popLayerEffect(){
+function popLayerEffect(target){
 	$('.p-Layer').css('display','block');
 	$('body').css('overflow','hidden');
 
+	$('.p-layer-container').load('https://mpph.github.io/' + target);
+
 	$('.p-layer-close').click(function(e){
+		$('.p-layer-container').empty();
 		$('.p-Layer').css('display','none');
 		$('body').css('overflow',''); }); }
 /*======================/Portfolio============================*/
@@ -189,6 +193,18 @@ $('.contact-block').on('mouseleave', function(e) {
 
 
 /* etc function */
+
+function scrolling(){
+	$('a.page-scroll[href*="#"]:not([href="#"])').on('click', function () {
+			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+				if (target.length) {
+					$('html, body').animate({
+						scrollTop: (target.offset().top -60)
+					}, 1200, "easeInOutExpo");
+					return false;
+				} } }); }
 
 function scrollOff(cN) {
 	$(cN).on('scroll touchmove mousewheel', function(e){
