@@ -1,12 +1,4 @@
 $( document ).ready(function() {
-	/* static variable */
-	var tabName= "";
-	var index = 0;
-	var target = "";
-	var t = "";
-	var c = "";
-	var s = "";
-	var navCheck = false;
 
 	/* Progress */
 	screenOut();
@@ -14,12 +6,24 @@ $( document ).ready(function() {
 	/* close navbar-collapse when a  clicked */
 	$('.navbar-toggler').click(function(e) {	
 			e.preventDefault();
-			updateMenuButton(e); });
+			updateMenuButton(); });
+	
 	$('.navbar-nav a').click(function(e) {
         $('.navbar-nav li').removeClass('active');
 		$('.navbar-collapse').removeClass('show');
 		$('.navbar-collapse').removeClass('collapseOn');
 		$('.navbar-toggler').removeClass('active'); }); 
+	
+	$('body').click(function(e){
+			if($('.navbar-collapse').hasClass('show') && !$('.navbar-collapse').is(e.target)) {
+				$('.navbar-toggler span:nth-child(3)').addClass('lowestbarup');
+				
+				setTimeout(function() {
+					$('.navbar-toggler span:nth-child(3)').removeClass('lowestbarup');
+					$('.navbar-collapse').removeClass('show');
+					$('.navbar-collapse').removeClass('collapseOn');
+					$('.navbar-toggler').removeClass('active');
+					$('.navbar-toggler').addClass('collapsed');},100); } });
 
 	/* Scroll event */
     $(window).scroll(function() {
@@ -75,16 +79,15 @@ $( document ).ready(function() {
 	/* Portfolio event */
 	$('.p-click').click(function(e){
 		e.preventDefault();
-		if($('.p-click').hasClass('p-details')) {
-			target = 'p-details';
+		
+		if($('.p-click').hasClass('p-dsigns')) {
+			target = 'dsigns';
 		} else if ($('.p-click').hasClass('p-animations')) {
-			target = 'p-animations';
+			target = 'animations';
 		} else if ($('.p-click').hasClass('p-videos')) {
-			target = 'p-videos';
-		}
-		$('.p-layer-container').load('https://mpph.github.io/test.html'); 
-		popLayerEffect(target);
-	});
+			target = 'videos'; }
+
+		popLayerEffect(target); });
 	
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -108,6 +111,7 @@ $( document ).ready(function() {
 function screenOut(){
 	/* progress-screen Scroll oFF */
 	scrollOff('.progress-screen');
+
 	setTimeout(
 		function(){
 			$('.progress-screen').fadeOut(2000); 
@@ -140,13 +144,12 @@ function AbilityCircle(cN){
 function popLayerEffect(target){
 	$('.p-Layer').css('display','block');
 	$('body').css('overflow','hidden');
-    
 
+    $('.p-layer-container').load('https://mpph.github.io/' + target + '.html'); 
 
 	$('.p-layer-close').click(function(e){
 		$('.p-Layer').css('display','none');
-		$('body').css('overflow',''); });
-}
+		$('body').css('overflow',''); }); }
 /*======================/Portfolio============================*/
 
 
@@ -192,17 +195,18 @@ function scrollOff(cN) {
 			e.preventDefault();
 			e.stopPropagation();
 			return false; } ); }
+
 function scrollON(cN) {
 	$(cN).off('scroll touchmove mousewheel'); }
 
 function getCurrentScroll() {
     return window.pageYOffset; }
 
-function updateMenuButton(e) {
+function updateMenuButton() {
 	$('.navbar-toggler').toggleClass('active');
 	$('.navbar-collapse').toggleClass('collapseOn');
 
-	if(!$('.navbar-toggler').hasClass('active') || !$(e.target).hasClass('.navbar-toggler')) {
+	if(!$('.navbar-toggler').hasClass('active')) {
 		$('.navbar-toggler span:nth-child(3)').addClass('lowestbarup');
 		setTimeout(function() {
 			$('.navbar-toggler span:nth-child(3)').removeClass('lowestbarup'); },550); } }
