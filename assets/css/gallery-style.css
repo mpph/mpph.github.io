@@ -30,7 +30,7 @@ a:hover {
 
 			@media only screen and (max-width: 433px) {
 				.portfolio-filter .filter-button {
-					padding: 10px 16px; } }
+					padding: 10px 12px; } }
 
 		.portfolio-filter .filter-button:hover {
 			background: #2E52C2;
