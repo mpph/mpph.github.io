@@ -81,11 +81,11 @@ $( document ).ready(function() {
 		e.preventDefault();
 		var target ='';
 
-		if($('.p-click').hasClass('p-details')) {
+		if($(this).hasClass('p-designs')) {
 			target = 'designs.html';
-		} else if ($('.p-click').hasClass('p-animations')) {
+		} else if ($(this).hasClass('p-animations')) {
 			target = 'animations.html';
-		} else if ($('.p-click').hasClass('p-videos')) {
+		} else if ($(this).hasClass('p-videos')) {
 			target = 'videos.html'; }
 
 		$('.p-layer-container').load('https://mpph.github.io/' + target); 
