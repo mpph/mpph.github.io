@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(window).load(function() {
 		var imgUrl ='';
 		var index = 0;
 		var length = 0;
