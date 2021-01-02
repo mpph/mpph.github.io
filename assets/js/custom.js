@@ -93,9 +93,7 @@ $( document ).ready(function() {
 	/* etc */
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
-
 	goBack();
-
 });
 /*======================/Init Function============================*/
 
@@ -137,14 +135,7 @@ function AbilityCircle(cN){
 		count++;
 	}, percent ); }
 /*======================/Skill============================*/
-		window.onpageshow = function(e){
-			if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
-				if($('.p-layer').hasClass('active')){
-					$('.p-layer').removeClass('active');
-					$('.p-layer-container').empty();
-					$('.p-layer').css('display','none');
-					$('body').css('overflow','');
-				} } }
+
 
 
 /*======================Portfolio============================*/
@@ -226,11 +217,11 @@ function sleep(delay) {
 	var start = new Date().getTime();
 	while(new Date().getTime() < start + delay); }
 
+
 function goBack(){
-	window.onpageshow = function(e) {
-				if ( event.persisted || (window.performance && window.performance.navigation.type == 2)) {
-					if($('.p-layer').hasClass('active')){
-						$('.p-layer').removeClass('active');
-						$('.p-layer-container').empty();
-						$('.p-layer').css('display','none');
-						$('body').css('overflow',''); } } } }
+	$(window).on('popstate', function() {
+		if($('.p-layer').hasClass('active')){
+			$('.p-layer').removeClass('active);
+			$('.p-layer-container').empty();
+			$('.p-layer').css('display','none');
+			$('body').css('overflow',''); } }); }
