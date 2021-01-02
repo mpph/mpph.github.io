@@ -27,11 +27,6 @@ input, button, submit {
 a:hover {
 	text-decoration: none !important; }
 
-i,
-span,
-a {
-	display: inline-block; }
-
 img {
 	max-width: 100%; }
 
@@ -165,8 +160,6 @@ ul, ol {
 .sticky {
   position: fixed;
   z-index: 99;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   -webkit-transition: all 0.1s ease 0s;
   -moz-transition: all 0.1s ease 0s;
   -ms-transition: all 0.1s ease 0s;
@@ -174,7 +167,10 @@ ul, ol {
   transition: all 0.1s ease 0s; }
   
 .sticky .nav-bar {
-	padding: 30px 0; }
+	margin: 30px 0;
+	padding: 5px 0;
+	background-color: rgba(255, 153, 153, .2);
+	box-shadow: 0px 1px 5px #333; }
 
 .sticky .nav-toggler .toggler-icon {
   background-color: #6b7db3; }
@@ -186,7 +182,7 @@ ul, ol {
   color: #fff; }
 
 .nav-bar {
-	padding: 25px 0;
+	margin: 20px 0;
 	border-radius: 5px;
 	position: relative;
 	display: flex;
@@ -199,14 +195,19 @@ ul, ol {
 	transition: all 0.3s ease-out 0s; }
 
 .logo {
-	padding: 0; }
+	margin: 0 0 0 10px; }
 
 @media only screen and (max-width: 991px) {
 	.nav-main {
 		display: none; } }
 
+.nav-main .nav .nav-item:not(last-child){
+  margin-right: 25px;
+}
+
 /*========Side Navigation Button===========*/
 .nav-toggler {
+	margin-right: 10px;
 	padding: 0;
 	display: none; }
 
@@ -217,7 +218,6 @@ ul, ol {
 .nav-toggler .toggler-icon {
 	width: 30px;
 	height: 2px;
-	top: 7px;
 	background-color: #000;
 	display: block;
 	margin: 5px 0;
@@ -235,7 +235,7 @@ ul, ol {
 	-ms-transform: rotate(-315deg);
 	-o-transform: rotate(-315deg);
 	transform: rotate(-315deg);
-	top: 14px; }
+	top: 7px; }
 
 .nav-toggler.active span:nth-child(2) {
 	-webkit-transform: rotate(315deg);
