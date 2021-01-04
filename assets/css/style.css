@@ -1037,3 +1037,9 @@ ul, ol {
 .nav-show {
 	display: block;
 	opacity: 1; }
+
+.ofh {
+	overflow: hidden; }
+
+.dpb {
+	display: block; }
