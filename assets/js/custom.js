@@ -230,6 +230,7 @@ function historyPop(){
 	window.onpopstate = history.onpushstate = function() {
 		if(window.location.href.split('/').pop().indexOf(galleryAddr)===-1){
 			historyReplace('home', 'home', 'https://mpph.github.io');
-			$('.p-layer').hide();
+
 			$('.p-layer-container').empty();
-			$('body').css('overflow',''); } } } 
+			$('.p-layer').removeClass('dpb');
+			$('body').removeClass('ofh'); } } } 
