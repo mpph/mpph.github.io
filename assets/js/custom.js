@@ -143,7 +143,7 @@ function popLayerEffect(target){
 	$('.p-layer').addClass('active');
 	$('.p-layer').css('display','block');
 	$('body').css('overflow','hidden');
-
+	
 	$('.p-layer-container').load('https://mpph.github.io/' + target);
 
 	$('.p-layer-bg').click(function(e){
@@ -217,11 +217,15 @@ function sleep(delay) {
 	var start = new Date().getTime();
 	while(new Date().getTime() < start + delay); }
 
-
 function goBack(){
-	$(window).on('popstate', function() {
+	if(document.refferrer){
+		history.back();
+	} else { 
 		if($('.p-layer').hasClass('active')){
-			$('.p-layer').removeClass('active);
+			$('.p-layer').removeClass('active');
 			$('.p-layer-container').empty();
 			$('.p-layer').css('display','none');
-			$('body').css('overflow',''); } }); }
+			$('body').css('overflow',''); 
+		}
+	}
+}
