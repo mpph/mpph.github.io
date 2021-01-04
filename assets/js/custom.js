@@ -108,13 +108,12 @@ $( document ).ready(function() {
 
 /*======================ProgressLoading============================*/
 function screenOut(){
-	/* progress-screen Scroll oFF */
-	scrollOff('.progress-screen');
+	$('body').addClass('ofh');
 
 	setTimeout(
 		function(){
 			$('.progress-screen').fadeOut(2000); 
-			scrollON('.progress-screen'); }, 2000 ); }
+			$('body').removeClass('ofh'); }, 2000 ); }
 /*======================/ProgressLoading============================*/
 
 
@@ -192,15 +191,6 @@ $('.contact-block').on('mouseleave', function(e) {
 
 
 /* etc function */
-
-function scrollOff(cN) {
-	$(cN).on('scroll touchmove mousewheel', function(e){
-			e.preventDefault();
-			e.stopPropagation();
-			return false; } ); }
-
-function scrollON(cN) {
-	$(cN).off('scroll touchmove mousewheel'); }
 
 function getCurrentScroll() {
     return window.pageYOffset; }
