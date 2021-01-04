@@ -93,7 +93,7 @@ $( document ).ready(function() {
 	/* etc */
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
-
+historyPop();
 });
 /*======================/Init Function============================*/
 
