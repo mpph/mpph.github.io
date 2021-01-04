@@ -227,7 +227,7 @@ function historyReplace(state, title, addr){
 
 function historyControll(){
   if (window.performance.navigation.type == 1) {
-		window.history.replace('home', 'home', 'https://mpph.github.io');
+		window.history.replace('https://mpph.github.io');
 
   } else if (window.performance.navigation.type == 2) {
 		if(window.location.href.split('/').pop().indexOf(galleryAddr) === -1){
