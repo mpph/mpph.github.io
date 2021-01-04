@@ -149,7 +149,7 @@ function popLayerEffect(target){
 	$('.p-layer-container').load('https://mpph.github.io/' + target);
 
 	$('.p-layer-bg').click(function(e){
-		historyPop();
+		window.history.back();
 		$('.p-layer').removeClass('active');
 		$('.p-layer-container').empty();
 		$('.p-layer').css('display','none');
