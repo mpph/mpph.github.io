@@ -79,11 +79,11 @@ $( document ).ready(function() {
 		var target ='';
 
 		if($(this).hasClass('p-designs')) {
-			target = 'designs.html';
+			target = 'designs';
 		} else if ($(this).hasClass('p-animations')) {
-			target = 'animations.html';
+			target = 'animations';
 		} else if ($(this).hasClass('p-videos')) {
-			target = 'videos.html'; }
+			target = 'videos'; }
 			
 		popLayerEffect(target); });
 	
@@ -140,13 +140,14 @@ function AbilityCircle(cN){
 
 /*======================Portfolio============================*/
 function popLayerEffect(target){
-	historyPush(target , 'openedLayer', '/' + target);
+	addr = target == 'designs' || 'animations' || 'videos' ? target + '-gallery' : target ;
+	historyPush(target , 'openedLayer', '/' + addr);
 
 	$('.p-layer').addClass('active');
 	$('.p-layer').css('display','block');
 	$('body').css('overflow','hidden');
 
-	$('.p-layer-container').load('https://mpph.github.io/' + target);
+	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
 	$('.p-layer-bg').click(function(e){
 		$('.p-layer').removeClass('active');
@@ -154,7 +155,7 @@ function popLayerEffect(target){
 		$('.p-layer').css('display','none');
 		$('body').css('overflow','');
 		window.history.back();
-		historyDelLastEntry(window.location.href); }); }
+		historyDelLastEntry(window.location.href)}); }
 /*======================/Portfolio============================*/
 
 
@@ -222,7 +223,7 @@ function sleep(delay) {
 	while(new Date().getTime() < start + delay); }
 
 function historyPush(state, title, addr){
-	window.history.pushState(state, title, location.replace(addr)); }
+	window.history.pushState(state, title, addr); }
 
 function historyDelLastEntry(addr){
 	alert(window.history.length);
