@@ -93,7 +93,7 @@ $( document ).ready(function() {
 	/* etc */
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
-	goBack();
+
 });
 /*======================/Init Function============================*/
 
@@ -143,7 +143,9 @@ function popLayerEffect(target){
 	$('.p-layer').addClass('active');
 	$('.p-layer').css('display','block');
 	$('body').css('overflow','hidden');
-	
+
+	historyPush(target , 'openedLayer', '/' + target);
+
 	$('.p-layer-container').load('https://mpph.github.io/' + target);
 
 	$('.p-layer-bg').click(function(e){
@@ -217,7 +219,11 @@ function sleep(delay) {
 	var start = new Date().getTime();
 	while(new Date().getTime() < start + delay); }
 
-function goBack(){
+function historyPush(state, title, addr){
+	window.history.pushState(state, title, addr);
+}
+
+function historyPop(){
 	if(document.refferrer){
 		if($('.p-layer').hasClass('active')){
 			$('.p-layer').removeClass('active');
