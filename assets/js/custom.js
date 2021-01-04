@@ -155,7 +155,7 @@ function popLayerEffect(target){
 		$('.p-layer').css('display','none');
 		$('body').css('overflow','');
 		window.history.back();
-		historyDelLastEntry(window.location.href)}); }
+		historyReplaceEntry(); }); }
 /*======================/Portfolio============================*/
 
 
@@ -225,11 +225,9 @@ function sleep(delay) {
 function historyPush(state, title, addr){
 	window.history.pushState(state, title, addr); }
 
-function historyDelLastEntry(addr){
-	alert(window.history.length);
-	window.location.replace(addr);
-	alert(window.history.length);
-}
+function historyReplaceEntry(){
+	window.location.replace('https://mpph.github.io/'); }
+
 function historyPop(){
 	window.onpopstate = history.onpushstate = function() {
 		if($('.p-layer').hasClass('active')){
