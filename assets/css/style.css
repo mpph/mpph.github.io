@@ -357,11 +357,11 @@ ul, ol {
 
 			@keyframes changtext {
 				0% { content: "Designer"; }
-				20% { content: "UI Developer"; }
-				40% { content: "UX Developer"; }
+				20% { content: "UI Designer"; }
+				40% { content: "UX Designer"; }
 				60% { content: "Web Publisher"; }
 				80% { content: "Web Developer"; }
-				100% { content: "Front End Developer"; } }
+				100% { content: "Front End"; } }
 
 				@keyframes typing {
 				 to{ width: 0; }
