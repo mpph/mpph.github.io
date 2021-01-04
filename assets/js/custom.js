@@ -79,11 +79,11 @@ $( document ).ready(function() {
 		var target ='';
 
 		if($(this).hasClass('p-designs')) {
-			target = 'designs';
+			target = 'designs.html';
 		} else if ($(this).hasClass('p-animations')) {
-			target = 'animations';
+			target = 'animations.html';
 		} else if ($(this).hasClass('p-videos')) {
-			target = 'videos'; }
+			target = 'videos.html'; }
 			
 		popLayerEffect(target); });
 	
@@ -140,14 +140,13 @@ function AbilityCircle(cN){
 
 /*======================Portfolio============================*/
 function popLayerEffect(target){
-	addr = target == 'designs' || 'animations' || 'videos' ? target + '-gallery' : target ;
-	historyPush(target , 'openedLayer', '/' + addr);
+	historyPush(target , 'openedLayer', '/' + target);
 
 	$('.p-layer').addClass('active');
 	$('.p-layer').css('display','block');
 	$('body').css('overflow','hidden');
 
-	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
+	$('.p-layer-container').load('https://mpph.github.io/' + target);
 
 	$('.p-layer-bg').click(function(e){
 		$('.p-layer').removeClass('active');
