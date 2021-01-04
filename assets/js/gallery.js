@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 		$(".lightbox").click(function(e){
 			e.preventDefault();
-
+			$('.lightbox').addClass('active');
 			$(".dark").fadeOut();
 			$(".lightbox").fadeOut("slow");
 			$(".next").fadeOut("slow");
@@ -68,5 +68,17 @@ $(document).ready(function() {
 
 				imgUrl = $('.show').eq(index).children('img').attr("src");;
 				$(".lightbox").css("background-image", 'url('+ imgUrl + ')'); }); 
+
+	
+		if(document.refferrer){
+			history.back();
+		} else { 
+			if($('.lightbox').hasClass('active')){
+				$('.lightbox').removeClass('active');
+				$(".dark").fadeOut();
+				$(".lightbox").fadeOut("slow");
+				$(".next").fadeOut("slow");
+				$(".prev").fadeOut("slow"); }	}
+
 				
 });
