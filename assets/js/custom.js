@@ -153,8 +153,9 @@ function popLayerEffect(target){
 		$('.p-layer').removeClass('active');
 		$('.p-layer-container').empty();
 		$('.p-layer').css('display','none');
-		$('body').css('overflow',''); 
-		window.history.back(); }); }
+		$('body').css('overflow','');
+		window.history.back();
+		historyDelLastEntry(window.location.href); }); }
 /*======================/Portfolio============================*/
 
 
@@ -222,9 +223,13 @@ function sleep(delay) {
 	while(new Date().getTime() < start + delay); }
 
 function historyPush(state, title, addr){
-	window.history.pushState(state, title, addr);
-}
+	window.history.pushState(state, title, location.replace(addr)); }
 
+function historyDelLastEntry(addr){
+	alert(window.history.length);
+	window.location.replace(addr);
+	alert(window.history.length);
+}
 function historyPop(){
 	window.onpopstate = history.onpushstate = function() {
 		if($('.p-layer').hasClass('active')){
