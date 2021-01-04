@@ -151,10 +151,10 @@ function popLayerEffect(target){
 	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
 	$('.p-layer-bg').click(function(e){
-		historyReplace('home', 'home', 'https://mpph.github.io');
 		$('.p-layer-container').empty();
 		$('.p-layer').removeClass('dpb');
-		$('body').removeClass('ofh');  }); }
+		$('body').removeClass('ofh');
+		historyReplace('home', 'home', 'https://mpph.github.io'); }); }
 /*======================/Portfolio============================*/
 
 
