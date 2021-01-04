@@ -151,11 +151,9 @@ function popLayerEffect(target){
 	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
 	$('.p-layer-bg').click(function(e){
-		window.history.back();
 		$('.p-layer-container').empty();
 		$('.p-layer').css('display','none');
-		$('body').css('overflow','');
-		history.replaceState(null, null, 'https://mpph.github.io'); }); }
+		$('body').css('overflow','');  }); }
 /*======================/Portfolio============================*/
 
 
@@ -223,7 +221,7 @@ function sleep(delay) {
 	while(new Date().getTime() < start + delay); }
 
 function historyPush(state, title, addr){
-	window.history.pushState(state, title, addr); }
+	window.history.replaceState(state, title, addr); }
 
 function historyPop(){
 	window.onpopstate = history.onpushstate = function() {
