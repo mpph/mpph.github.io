@@ -142,7 +142,7 @@ function AbilityCircle(cN){
 /*======================Portfolio============================*/
 function popLayerEffect(target){
 	galleryAddr = target == 'designs' || 'animations' || 'videos' ? target + '-gallery' : target ;
-	historyPush(target , 'openedLayer', '/' + galleryAddr);
+	historyReplace(target , 'openedLayer', '/' + galleryAddr);
 
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
@@ -150,6 +150,7 @@ function popLayerEffect(target){
 	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
 	$('.p-layer-bg').click(function(e){
+		alert(window.location.href.split('/').pop().indexOf(galleryAddr));
 		$('.p-layer-container').empty();
 		$('.p-layer').removeClass('dpb');
 		$('body').removeClass('ofh');
@@ -229,8 +230,7 @@ function historyReplace(state, title, addr){
 function historyPop(){
 	window.onpopstate = history.onpushstate = function() {
 		if(window.location.href.split('/').pop().indexOf(galleryAddr)===-1){
-			historyReplace('home', 'home', 'https://mpph.github.io');
-
 			$('.p-layer-container').empty();
 			$('.p-layer').removeClass('dpb');
-			$('body').removeClass('ofh'); } } } 
+			$('body').removeClass('ofh');
+			historyReplace('home', 'home', 'https://mpph.github.io'); } } } 
