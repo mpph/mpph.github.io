@@ -219,13 +219,18 @@ function sleep(delay) {
 
 function goBack(){
 	if(document.refferrer){
-		history.back();
+		if($('.p-layer').hasClass('active')){
+			$('.p-layer').removeClass('active');
+			$('.p-layer-container').empty();
+			$('.p-layer').css('display','none');
+			$('body').css('overflow',''); 
+	}else{
+		history.back(); }
 	} else { 
 		if($('.p-layer').hasClass('active')){
 			$('.p-layer').removeClass('active');
 			$('.p-layer-container').empty();
 			$('.p-layer').css('display','none');
 			$('body').css('overflow',''); 
-		}
 	}
 }
