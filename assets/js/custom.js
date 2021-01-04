@@ -234,5 +234,4 @@ function historyControll(){
 			$('.p-layer-container').empty();
 			$('.p-layer').removeClass('dpb');
 			$('body').removeClass('ofh');
-			historyReplace('home', 'home', 'https://mpph.github.io'); } }
-  }
+			historyReplace('home', 'home', 'https://mpph.github.io'); } } }
