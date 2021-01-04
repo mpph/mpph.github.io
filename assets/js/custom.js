@@ -226,10 +226,10 @@ function historyReplace(state, title, addr){
 	window.history.replaceState(state, title, addr); }
 
 function historyControll(){
-  if (performance.navigation.type == 1) {
+  if (window.performance.navigation.type == 1) {
 		window.history.replace('home', 'home', 'https://mpph.github.io');
 
-  } else if (performance.navigation.type == 2) {
+  } else if (window.performance.navigation.type == 2) {
 		if(window.location.href.split('/').pop().indexOf(galleryAddr) === -1){
 			$('.p-layer-container').empty();
 			$('.p-layer').removeClass('dpb');
