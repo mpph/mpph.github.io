@@ -144,7 +144,6 @@ function popLayerEffect(target){
 	galleryAddr = target == 'designs' || 'animations' || 'videos' ? target + '-gallery' : target ;
 	historyPush(target , 'openedLayer', '/' + galleryAddr);
 
-	$('.p-layer').show();
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 
