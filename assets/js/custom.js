@@ -10,16 +10,16 @@ $( document ).ready(function() {
 	
 	$('.nav a').click(function(e) {
         $('.nav li').removeClass('active');
-		$('.nav-sub').removeClass('show');
+		$('.nav-sub').removeClass('nav-show');
 		$('.nav-toggler').removeClass('active'); }); 
 	
 	$('body').click(function(e){
-			if($('.nav-sub').hasClass('show') && !$('.nav-sub').is(e.target) && !$('.nav-toggler').is(e.target) && !$('.toggler-icon').is(e.target)) {
+			if($('.nav-sub').hasClass('nav-show') && !$('.nav-sub').is(e.target) && !$('.nav-toggler').is(e.target) && !$('.toggler-icon').is(e.target)) {
 				$('.nav-toggler span:nth-child(3)').addClass('lowestbarup');
 				
 				setTimeout(function() {
 					$('.nav-toggler span:nth-child(3)').removeClass('lowestbarup');
-					$('.nav-sub').removeClass('show');
+					$('.nav-sub').removeClass('nav-show');
 					$('.nav-toggler').removeClass('active'); },100); } });
 
 	/* Scroll event */
@@ -205,7 +205,7 @@ function getCurrentScroll() {
 
 function updateMenuButton() {
 	$('.nav-toggler').toggleClass('active');
-	$('.nav-sub').toggleClass('show');
+	$('.nav-sub').toggleClass('nav-show');
 
 	if(!$('.nav-toggler').hasClass('active')) {
 		$('.nav-toggler span:nth-child(3)').addClass('lowestbarup');
