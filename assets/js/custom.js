@@ -145,8 +145,8 @@ function popLayerEffect(target){
 	historyPush(target , 'openedLayer', '/' + galleryAddr);
 
 	$('.p-layer').show();
-	$('.p-layer').addclass('dpb');
-	$('body').addclass('ofh');
+	$('.p-layer').addClass('dpb');
+	$('body').addClass('ofh');
 
 	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
