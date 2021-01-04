@@ -145,16 +145,16 @@ function popLayerEffect(target){
 	historyPush(target , 'openedLayer', '/' + galleryAddr);
 
 	$('.p-layer').show();
-	$('.p-layer').css('display','block');
-	$('body').css('overflow','hidden');
+	$('.p-layer').addclass('dpb');
+	$('body').addclass('ofh');
 
 	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
 	$('.p-layer-bg').click(function(e){
-		historyReplace(null, 'home', 'https://mpph.github.io');
+		historyReplace('home', 'home', 'https://mpph.github.io');
 		$('.p-layer-container').empty();
-		$('.p-layer').css('display','none');
-		$('body').css('overflow','');  }); }
+		$('.p-layer').removeClass('dpb');
+		$('body').removeClass('ofh');  }); }
 /*======================/Portfolio============================*/
 
 
@@ -230,6 +230,7 @@ function historyReplace(state, title, addr){
 function historyPop(){
 	window.onpopstate = history.onpushstate = function() {
 		if(window.location.href.split('/').pop().indexOf(galleryAddr)===-1){
+			historyReplace('home', 'home', 'https://mpph.github.io');
 			$('.p-layer').hide();
 			$('.p-layer-container').empty();
 			$('body').css('overflow',''); } } } 
