@@ -150,11 +150,11 @@ function popLayerEffect(target){
 	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
 	$('.p-layer-bg').click(function(e){
-		window.history.back();
 		$('.p-layer').removeClass('active');
 		$('.p-layer-container').empty();
 		$('.p-layer').css('display','none');
-		$('body').css('overflow',''); }); }
+		$('body').css('overflow',''); 
+		window.history.back(); }); }
 /*======================/Portfolio============================*/
 
 
