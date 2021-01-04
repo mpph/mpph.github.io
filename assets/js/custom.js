@@ -94,7 +94,7 @@ $( document ).ready(function() {
 	/* etc */
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
-historyPop();
+	historyControll();
 });
 /*======================/Init Function============================*/
 
@@ -227,10 +227,14 @@ function historyPush(state, title, addr){
 function historyReplace(state, title, addr){
 	window.history.replaceState(state, title, addr); }
 
-function historyPop(){
-	window.onpopstate = history.onpushstate = function() {
-		if(window.location.href.split('/').pop().indexOf(galleryAddr)===-1){
+function historyControll(){
+  if (performance.navigation.type == 1) {
+		window.history.replace('home', 'home', 'https://mpph.github.io');
+
+  } else if (performance.navigation.type == 2) {
+		if(window.location.href.split('/').pop().indexOf(galleryAddr) === -1){
 			$('.p-layer-container').empty();
 			$('.p-layer').removeClass('dpb');
 			$('body').removeClass('ofh');
-			historyReplace('home', 'home', 'https://mpph.github.io'); } } } 
+			historyReplace('home', 'home', 'https://mpph.github.io'); } }
+  }
