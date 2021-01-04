@@ -154,7 +154,8 @@ function popLayerEffect(target){
 		window.history.back();
 		$('.p-layer-container').empty();
 		$('.p-layer').css('display','none');
-		$('body').css('overflow',''); }); }
+		$('body').css('overflow','');
+		history.replaceState(null, null, 'https://mpph.github.io'); }); }
 /*======================/Portfolio============================*/
 
 
