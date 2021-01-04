@@ -150,6 +150,7 @@ function popLayerEffect(target){
 
 	$('.p-layer-bg').click(function(e){
 		window.history.back();
+		window.history.replaceState();
 		$('.p-layer').removeClass('active');
 		$('.p-layer-container').empty();
 		$('.p-layer').css('display','none');
