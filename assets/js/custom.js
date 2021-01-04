@@ -146,11 +146,9 @@ function popLayerEffect(target){
 
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
-
 	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
 	$('.p-layer-bg').click(function(e){
-		alert(window.location.href.split('/').pop().indexOf(galleryAddr));
 		$('.p-layer-container').empty();
 		$('.p-layer').removeClass('dpb');
 		$('body').removeClass('ofh');
