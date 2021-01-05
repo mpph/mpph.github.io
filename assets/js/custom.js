@@ -151,7 +151,6 @@ function popLayerEffect(mainAddr, target){
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
 	
 	$('.p-layer-bg').click(function(e){
-		galleryAddr = '';
 		$('.p-layer-container').empty();
 		$('.p-layer').removeClass('dpb');
 		$('body').removeClass('ofh');
