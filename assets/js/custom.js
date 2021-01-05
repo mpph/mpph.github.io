@@ -229,5 +229,5 @@ function historyControll(){
 
 	window.addEventListener("load", function(e){ 
 		if(hashArray.length > 1){
-			window.history.replace('https://mpph.github.io'); } } }
+			window.location.replace('https://mpph.github.io'); } } }
 
