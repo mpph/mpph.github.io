@@ -224,7 +224,7 @@ function historyControll(mainAddr){
 	window.addEventListener("popstate", function(e){ 
 		hashArray = window.location.href.split('/');
 		
-		if(typeof hashArray[4] !== 'undefined'){
+		if(hashArray[3] !== undefined){
 				$('.p-layer-container').empty();
 				$('.p-layer').removeClass('dpb');
 				$('body').removeClass('ofh');
@@ -234,6 +234,6 @@ function historyControll(mainAddr){
 	window.addEventListener("load", function(e){
 		hashArray = window.location.href.split('/');
 
-		if(typeof hashArray[4] !== 'undefined'){
+		if(hashArray[3] !== undefined){
 			window.location.replace(mainAddr); } }); }
 
