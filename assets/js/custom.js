@@ -1,5 +1,6 @@
 $( document ).ready(function() {
 	var mainAddr = 'https://mpph.github.io';
+	var pch = false;
 
 	/* Progress */
 	screenOut();
@@ -86,7 +87,7 @@ $( document ).ready(function() {
 		} else if ($(this).hasClass('p-videos')) {
 			target = 'videos'; }
 			
-		popLayerEffect(mainAddr, target); });
+		popLayerEffect(mainAddr, target, pch); });
 	
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -95,7 +96,7 @@ $( document ).ready(function() {
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
 
-	historyControll(mainAddr);
+	historyControll(pch);
 });
 /*======================/Init Function============================*/
 
@@ -140,19 +141,20 @@ function AbilityCircle(cN){
 
 
 /*======================Portfolio============================*/
-function popLayerEffect(mainAddr, target){
-	var galleryAddr = target == 'designs' || 'animations' || 'videos' ? target + '-gallery' : target ;
-	historyReplace(target , 'openedLayer', '/' + galleryAddr);
-	
+function popLayerEffect(mainAddr, target, pch){
+	pch = true;
+	historyPush(target , 'openedLayer', '');
+
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
 	
 	$('.p-layer-bg').click(function(e){
+		pch = false;
 		$('.p-layer-container').empty();
 		$('.p-layer').removeClass('dpb');
 		$('body').removeClass('ofh');
-		historyReplace('home', 'home', mainAddr); }); }
+		window.history.back();  }); }
 /*======================/Portfolio============================*/
 
 
@@ -216,22 +218,10 @@ function historyPush(state, title, addr){
 function historyReplace(state, title, addr){
 	window.history.replaceState(state, title, addr); }
 
-function historyControll(mainAddr){
-	var hashArray = '';
-
-	if (document.readyState == "loading") {
-		hashArray = window.location.href.split('/');
-		
-		if(typeof hashArray[3] != 'undefined'){
-				$('.p-layer-container').empty();
-				$('.p-layer').removeClass('dpb');
-				$('body').removeClass('ofh');
-				historyReplace('home', 'home', mainAddr);
-				window.history.go(1); } 
-
-	} else if (document.readyState == "complete") {
-		hashArray = window.location.href.split('/');
-
-		if(typeof hashArray[3] != 'undefined'){
-			window.location.replace(mainAddr); } } }
-
+function historyControll(pch){
+	window.onpopstate = history.onpushstate = function(e){
+		if(pch){
+			$('.p-layer-container').empty();
+			$('.p-layer').removeClass('dpb');
+			$('body').removeClass('ofh');
+			pch = false; } } }
