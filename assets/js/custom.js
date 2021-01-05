@@ -218,9 +218,11 @@ function historyReplace(state, title, addr){
 	window.history.replaceState(state, title, addr); }
 
 function historyControll(mainAddr){
-	var hashArray = window.location.href.split('/');
+	var hashArray = '';
 
 	window.addEventListener("popstate", function(e){ 
+		hashArray = window.location.href.split('/');
+		
 		if(typeof hashArray[4] !== 'undefined'){
 				$('.p-layer-container').empty();
 				$('.p-layer').removeClass('dpb');
@@ -228,7 +230,9 @@ function historyControll(mainAddr){
 				historyReplace('home', 'home', mainAddr);
 				window.history.go(1); } }); 
 
-	window.addEventListener("load", function(e){ 
+	window.addEventListener("load", function(e){
+		hashArray = window.location.href.split('/');
+
 		if(typeof hashArray[4] !== 'undefined'){
 			window.location.replace(mainAddr); } }); }
 
