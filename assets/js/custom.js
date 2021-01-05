@@ -220,7 +220,7 @@ function historyControll(){
 	var hashArray = window.location.href.split('/'); /*window.location.href.split('/').pop().indexOf(galleryAddr) === -1*/
 	alert(hashArray);
 	window.addEventListener("popstate", function(e){ 
-		if(hashArray.length > 1){
+		if(hashArray.length > 3){
 				$('.p-layer-container').empty();
 				$('.p-layer').removeClass('dpb');
 				$('body').removeClass('ofh');
@@ -228,6 +228,6 @@ function historyControll(){
 				window.history.go(1); } }); 
 
 	window.addEventListener("load", function(e){ 
-		if(hashArray.length > 1){
+		if(hashArray.length > 3){
 			window.location.replace('https://mpph.github.io'); } }); }
 
