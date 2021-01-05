@@ -96,7 +96,7 @@ $( document ).ready(function() {
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
 
-	pch = historyControll(pch);
+	
 });
 /*======================/Init Function============================*/
 
@@ -149,13 +149,13 @@ function popLayerEffect(mainAddr, target, pch){
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
 	
+	historyControll('gallery', pch);
+	
 	$('.p-layer-bg').click(function(e){
-		pch = false;
 		$('.p-layer-container').empty();
 		$('.p-layer').removeClass('dpb');
 		$('body').removeClass('ofh');
-		window.history.back();  });
-	return pch; }
+		window.history.back();  }); }
 /*======================/Portfolio============================*/
 
 
@@ -219,11 +219,13 @@ function historyPush(state, title, addr){
 function historyReplace(state, title, addr){
 	window.history.replaceState(state, title, addr); }
 
-function historyControll(pch){
-	window.onpopstate = history.onpushstate = function(e){
-		if(pch){
-			$('.p-layer-container').empty();
-			$('.p-layer').removeClass('dpb');
-			$('body').removeClass('ofh');
-			pch = false; } } 
-	return pch; }
+function historyControll(obj, pch){
+	switch (obj){
+		case 'gallery':
+			window.onpopstate = history.onpushstate = function(e){
+			if(pch){
+				$('.p-layer-container').empty();
+				$('.p-layer').removeClass('dpb');
+				$('body').removeClass('ofh');
+				pch = false; } }
+			break; } }
