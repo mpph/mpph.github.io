@@ -222,7 +222,7 @@ function historyControll(mainAddr){
 	var hashArray = window.location.href.split('/');
 
 	window.addEventListener("popstate", function(e){ 
-		if(hashArray[4] != ''){
+		if(hashArray[4] != 'undefined'){
 				$('.p-layer-container').empty();
 				$('.p-layer').removeClass('dpb');
 				$('body').removeClass('ofh');
@@ -230,6 +230,6 @@ function historyControll(mainAddr){
 				window.history.go(1); } }); 
 
 	window.addEventListener("load", function(e){ 
-		if(hashArray[4] != ''){
+		if(hashArray[4] != 'undefined'){
 			window.location.replace(mainAddr); } }); }
 
