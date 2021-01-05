@@ -87,7 +87,7 @@ $( document ).ready(function() {
 		} else if ($(this).hasClass('p-videos')) {
 			target = 'videos'; }
 			
-		popLayerEffect(mainAddr, target, pch); });
+		pch = popLayerEffect(mainAddr, target, pch); });
 	
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -96,7 +96,7 @@ $( document ).ready(function() {
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
 
-	historyControll(pch);
+	pch = historyControll(pch);
 });
 /*======================/Init Function============================*/
 
@@ -154,7 +154,8 @@ function popLayerEffect(mainAddr, target, pch){
 		$('.p-layer-container').empty();
 		$('.p-layer').removeClass('dpb');
 		$('body').removeClass('ofh');
-		window.history.back();  }); }
+		window.history.back();  });
+	return pch; }
 /*======================/Portfolio============================*/
 
 
@@ -224,4 +225,5 @@ function historyControll(pch){
 			$('.p-layer-container').empty();
 			$('.p-layer').removeClass('dpb');
 			$('body').removeClass('ofh');
-			pch = false; } } }
+			pch = false; } } 
+	return pch; }
