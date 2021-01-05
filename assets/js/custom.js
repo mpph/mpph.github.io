@@ -143,11 +143,13 @@ function AbilityCircle(cN){
 function popLayerEffect(mainAddr, target){
 	var galleryAddr = target == 'designs' || 'animations' || 'videos' ? target + '-gallery' : target ;
 	historyReplace(target , 'openedLayer', '/' + galleryAddr);
+	
+	alert(window.location.href.split('/')[4]);
 
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
-
+	
 	$('.p-layer-bg').click(function(e){
 		galleryAddr = '';
 		$('.p-layer-container').empty();
