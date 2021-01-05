@@ -220,7 +220,6 @@ function historyReplace(state, title, addr){
 
 function historyControll(mainAddr){
 	var hashArray = window.location.href.split('/');
-	alert(hashArray[4]);
 
 	window.addEventListener("popstate", function(e){ 
 		if(hashArray[4] != ''){
