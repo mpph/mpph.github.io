@@ -225,9 +225,9 @@ function historyControll(){
 				$('.p-layer').removeClass('dpb');
 				$('body').removeClass('ofh');
 				historyReplace('home', 'home', 'https://mpph.github.io');
-				window.history.go(1); } } 
+				window.history.go(1); } }); 
 
 	window.addEventListener("load", function(e){ 
 		if(hashArray.length > 1){
-			window.location.replace('https://mpph.github.io'); } } }
+			window.location.replace('https://mpph.github.io'); } }); }
 
