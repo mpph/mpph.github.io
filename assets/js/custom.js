@@ -148,6 +148,7 @@ function popLayerEffect(target){
 	$('.p-layer-container').load('https://mpph.github.io/' + target + '.html');
 
 	$('.p-layer-bg').click(function(e){
+		galleryAddr = '';
 		$('.p-layer-container').empty();
 		$('.p-layer').removeClass('dpb');
 		$('body').removeClass('ofh');
@@ -216,12 +217,17 @@ function historyReplace(state, title, addr){
 	window.history.replaceState(state, title, addr); }
 
 function historyControll(){
-  if (window.performance.navigation.type == 1) {
-		window.history.replace('https://mpph.github.io');
+	var hashArray = window.location.href.split('/'); /*window.location.href.split('/').pop().indexOf(galleryAddr) === -1*/
+	alert(hashArray);
+	window.addEventListener("popstate", function(e){ 
+		if(hashArray.length > 1){
+				$('.p-layer-container').empty();
+				$('.p-layer').removeClass('dpb');
+				$('body').removeClass('ofh');
+				historyReplace('home', 'home', 'https://mpph.github.io');
+				window.history.go(1); } } 
 
-  } else if (window.performance.navigation.type == 2) {
-		if(window.location.href.split('/').pop().indexOf(galleryAddr) === -1){
-			$('.p-layer-container').empty();
-			$('.p-layer').removeClass('dpb');
-			$('body').removeClass('ofh');
-			historyReplace('home', 'home', 'https://mpph.github.io'); } } }
+	window.addEventListener("load", function(e){ 
+		if(hashArray.length > 1){
+			window.history.replace('https://mpph.github.io'); } } }
+
