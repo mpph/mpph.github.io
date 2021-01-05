@@ -144,8 +144,6 @@ function popLayerEffect(mainAddr, target){
 	var galleryAddr = target == 'designs' || 'animations' || 'videos' ? target + '-gallery' : target ;
 	historyReplace(target , 'openedLayer', '/' + galleryAddr);
 	
-	alert(window.location.href.split('/')[4]);
-
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
@@ -221,19 +219,19 @@ function historyReplace(state, title, addr){
 function historyControll(mainAddr){
 	var hashArray = '';
 
-	window.addEventListener("popstate", function(e){ 
+	if (document.readyState == "loading") {
 		hashArray = window.location.href.split('/');
 		
-		if(hashArray[3] !== undefined){
+		if(typeof hashArray[3] != 'undefined'){
 				$('.p-layer-container').empty();
 				$('.p-layer').removeClass('dpb');
 				$('body').removeClass('ofh');
 				historyReplace('home', 'home', mainAddr);
-				window.history.go(1); } }); 
+				window.history.go(1); } 
 
-	window.addEventListener("load", function(e){
+	} else if (document.readyState == "complete") {
 		hashArray = window.location.href.split('/');
 
-		if(hashArray[3] !== undefined){
-			window.location.replace(mainAddr); } }); }
+		if(typeof hashArray[3] != 'undefined'){
+			window.location.replace(mainAddr); } } }
 
