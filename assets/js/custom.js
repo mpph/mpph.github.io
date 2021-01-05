@@ -95,7 +95,8 @@ $( document ).ready(function() {
 	/* etc */
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
-	historyControll();
+
+	historyControll(mainAddr);
 });
 /*======================/Init Function============================*/
 
@@ -217,9 +218,10 @@ function historyPush(state, title, addr){
 function historyReplace(state, title, addr){
 	window.history.replaceState(state, title, addr); }
 
-function historyControll(){
+function historyControll(mainAddr){
 	var hashArray = window.location.href.split('/');
 	alert(hashArray[4]);
+
 	window.addEventListener("popstate", function(e){ 
 		if(hashArray[4] != ''){
 				$('.p-layer-container').empty();
