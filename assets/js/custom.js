@@ -114,7 +114,7 @@ function screenOut(){
 
 	setTimeout(
 		function(){
-			$('.progress-screen').fadeOut(2000); 
+			$('.progress-screen').fadeOut(1500); 
 			$('body').removeClass('ofh'); }, 2000 ); }
 /*======================/ProgressLoading============================*/
 
