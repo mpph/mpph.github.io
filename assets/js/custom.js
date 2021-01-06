@@ -86,7 +86,7 @@ $( document ).ready(function() {
 		} else if ($(this).hasClass('p-videos')) {
 			target = 'videos'; }
 			
-		popLayerEffect(mainAddr, target); });
+		popUpLayer(mainAddr, target); });
 	
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -137,7 +137,7 @@ function AbilityCircle(cN){
 
 
 /*======================Portfolio============================*/
-function popLayerEffect(mainAddr, target){
+function popUpLayer(mainAddr, target){
 	historyPush({}, target, '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
