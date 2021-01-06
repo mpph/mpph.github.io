@@ -140,7 +140,6 @@ function AbilityCircle(cN){
 /*======================Portfolio============================*/
 function popLayerEffect(mainAddr, target, pch){
 	pch = true;
-	history.deleteAll();
 	historyPush(target , 'openedLayer', '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
