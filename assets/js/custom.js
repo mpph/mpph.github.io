@@ -87,7 +87,7 @@ $( document ).ready(function() {
 		} else if ($(this).hasClass('p-videos')) {
 			target = 'videos'; }
 			
-		pch = popLayerEffect(mainAddr, target, pch); });
+		popLayerEffect(mainAddr, target, pch); });
 	
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -111,7 +111,7 @@ $( document ).ready(function() {
 /*======================ProgressLoading============================*/
 function screenOut(){
 	$('body').addClass('ofh');
-	$('.progress-screen').fadeOut(3000); 
+	$('.progress-screen').fadeOut(2000); 
 	$('body').removeClass('ofh'); }
 /*======================/ProgressLoading============================*/
 
@@ -140,6 +140,7 @@ function AbilityCircle(cN){
 /*======================Portfolio============================*/
 function popLayerEffect(mainAddr, target, pch){
 	pch = true;
+
 	historyPush(target , 'openedLayer', '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
@@ -147,6 +148,7 @@ function popLayerEffect(mainAddr, target, pch){
 	historyControll('gallery', pch);
 	
 	$('.p-layer-bg').click(function(e){
+		e.preventDefault();
 		history.go(-1);  }); }
 /*======================/Portfolio============================*/
 
