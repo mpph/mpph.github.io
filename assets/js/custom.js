@@ -138,7 +138,7 @@ function AbilityCircle(cN){
 
 /*======================Portfolio============================*/
 function popLayerEffect(mainAddr, target){
-	historyPush({}, 'openedLayer', '');
+	historyPush({}, target, '/' + target);
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
