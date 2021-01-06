@@ -148,8 +148,9 @@ function popLayerEffect(mainAddr, target, pch){
 	historyControll('gallery', pch);
 	
 	$('.p-layer-bg').click(function(e){
-		e.preventDefault();
-		history.go(-1);  }); }
+		if(pch){
+			history.go(-1);
+			pch = false;} }); }
 /*======================/Portfolio============================*/
 
 
