@@ -140,14 +140,14 @@ function AbilityCircle(cN){
 function popLayerEffect(mainAddr, target){
 	var pch = true;
 
-	historyPush(target , 'openedLayer', '');
+	historyPush({}, 'openedLayer', '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
 
 	$('.p-layer-bg').click(function(e){
 		if(pch){
-			history.go(-1);
+			window.history.go(-1);
 			pch = false;} }); }
 /*======================/Portfolio============================*/
 
