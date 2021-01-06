@@ -95,8 +95,6 @@ $( document ).ready(function() {
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
 
-	$('.p-layer-bg').click(function(e){
-			window.history.go(-1); }); 
 	historyControll();
 });
 /*======================/Init Function============================*/
@@ -140,7 +138,7 @@ function AbilityCircle(cN){
 
 /*======================Portfolio============================*/
 function popLayerEffect(mainAddr, target){
-	historyPush({}, target, '/' + target);
+	historyPush({}, target, '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html'); }
@@ -208,8 +206,11 @@ function historyReplace(state, title, addr){
 	history.replaceState(state, title, addr); }
 
 function historyControll(){
-			window.onpopstate = history.onpushstate = function(e){
-				if($('.p-layer').hasClass('dpb')){
-					$('.p-layer-container').empty();
-					$('.p-layer').removeClass('dpb');
-					$('body').removeClass('ofh'); } } }
+	$('.p-layer-bg').click(function(e){
+		window.history.go(-1); }); 
+
+	window.onpopstate = history.onpushstate = function(e){
+		if($('.p-layer').hasClass('dpb')){
+			$('.p-layer-container').empty();
+			$('.p-layer').removeClass('dpb');
+			$('body').removeClass('ofh'); } } }
