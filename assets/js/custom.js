@@ -148,10 +148,7 @@ function popLayerEffect(mainAddr, target, pch){
 	historyControll('gallery', pch);
 	
 	$('.p-layer-bg').click(function(e){
-		$('.p-layer-container').empty();
-		$('.p-layer').removeClass('dpb');
-		$('body').removeClass('ofh');
-		window.history.back();  }); }
+		window.history.go(-1);  }); }
 /*======================/Portfolio============================*/
 
 
