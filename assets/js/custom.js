@@ -95,7 +95,7 @@ $( document ).ready(function() {
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
 
-	
+	historyControll();
 });
 /*======================/Init Function============================*/
 
@@ -145,8 +145,6 @@ function popLayerEffect(mainAddr, target){
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
 
-	historyControll('gallery', pch);
-	
 	$('.p-layer-bg').click(function(e){
 		if(pch){
 			history.go(-1);
@@ -214,14 +212,9 @@ function historyPush(state, title, addr){
 function historyReplace(state, title, addr){
 	history.replaceState(state, title, addr); }
 
-function historyControll(obj, pch){
-	switch (obj){
-		case 'gallery':
+function historyControll(){
+		if($('.p-layer').hasClass('dpb')){
 			window.onpopstate = history.onpushstate = function(e){
-			e.preventDefault();
-			if(pch){
 				$('.p-layer-container').empty();
 				$('.p-layer').removeClass('dpb');
-				$('body').removeClass('ofh');
-				pch = false; } }
-			break; } }
+				$('body').removeClass('ofh'); } } }
