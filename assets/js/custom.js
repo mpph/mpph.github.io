@@ -1,6 +1,5 @@
 $( document ).ready(function() {
 	var mainAddr = 'https://mpph.github.io';
-	var pch = false;
 
 	/* Progress */
 	screenOut();
@@ -139,13 +138,13 @@ function AbilityCircle(cN){
 
 /*======================Portfolio============================*/
 function popLayerEffect(mainAddr, target, pch){
-	pch = true;
+	var pch = true;
 
 	historyPush(target , 'openedLayer', '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
-	historyControll('gallery', pch);
+	pch = historyControll('gallery', pch);
 	
 	$('.p-layer-bg').click(function(e){
 		if(pch){
@@ -223,4 +222,5 @@ function historyControll(obj, pch){
 				$('.p-layer').removeClass('dpb');
 				$('body').removeClass('ofh');
 				pch = false; } }
-			break; } }
+			break; } 
+	return pch; }
