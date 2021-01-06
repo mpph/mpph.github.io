@@ -86,7 +86,7 @@ $( document ).ready(function() {
 		} else if ($(this).hasClass('p-videos')) {
 			target = 'videos'; }
 			
-		popLayerEffect(mainAddr, target, pch); });
+		popLayerEffect(mainAddr, target); });
 	
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -137,14 +137,15 @@ function AbilityCircle(cN){
 
 
 /*======================Portfolio============================*/
-function popLayerEffect(mainAddr, target, pch){
+function popLayerEffect(mainAddr, target){
 	var pch = true;
 
 	historyPush(target , 'openedLayer', '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
-	pch = historyControll('gallery', pch);
+
+	historyControll('gallery', pch);
 	
 	$('.p-layer-bg').click(function(e){
 		if(pch){
@@ -217,10 +218,10 @@ function historyControll(obj, pch){
 	switch (obj){
 		case 'gallery':
 			window.onpopstate = history.onpushstate = function(e){
+			e.preventDefault();
 			if(pch){
 				$('.p-layer-container').empty();
 				$('.p-layer').removeClass('dpb');
 				$('body').removeClass('ofh');
 				pch = false; } }
-			break; } 
-	return pch; }
+			break; } }
