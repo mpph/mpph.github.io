@@ -144,8 +144,9 @@ function popLayerEffect(mainAddr, target, pch){
 
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
-	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
-	
+
+	/*$('.p-layer-container').load(mainAddr + '/' +target + '.html');*/
+	loadHtml('.p-layer-container', mainAddr + '/' +target + '.html');
 	historyControll('gallery', pch);
 	
 	$('.p-layer-bg').click(function(e){
@@ -205,6 +206,16 @@ function updateMenuButton() {
 		setTimeout(function() {
 			$('.nav-toggler span:nth-child(3)').removeClass('lowestbarup'); },550); } }
 
+function loadHtml(obj, url){
+var xhr = window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP");
+    xhr.open("GET", url, false);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            $(obj).innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send(null);
+}
 
 function sleep(delay) {
 	var start = new Date().getTime();
