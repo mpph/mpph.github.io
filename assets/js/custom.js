@@ -111,7 +111,7 @@ $( document ).ready(function() {
 /*======================ProgressLoading============================*/
 function screenOut(){
 	$('body').addClass('ofh');
-	$('.progress-screen').fadeOut(1500); 
+	$('.progress-screen').fadeOut(3000); 
 	$('body').removeClass('ofh'); }
 /*======================/ProgressLoading============================*/
 
