@@ -140,7 +140,7 @@ function AbilityCircle(cN){
 /*======================Portfolio============================*/
 function popLayerEffect(mainAddr, target, pch){
 	pch = true;
-
+	history.deleteAll();
 	historyPush(target , 'openedLayer', '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
@@ -148,7 +148,7 @@ function popLayerEffect(mainAddr, target, pch){
 	historyControll('gallery', pch);
 	
 	$('.p-layer-bg').click(function(e){
-		window.history.go(-1);  }); }
+		history.go(-1);  }); }
 /*======================/Portfolio============================*/
 
 
@@ -207,10 +207,10 @@ function sleep(delay) {
 	while(new Date().getTime() < start + delay); }
 
 function historyPush(state, title, addr){
-	window.history.pushState(state, title, addr); }
+	history.pushState(state, title, addr); }
 
 function historyReplace(state, title, addr){
-	window.history.replaceState(state, title, addr); }
+	history.replaceState(state, title, addr); }
 
 function historyControll(obj, pch){
 	switch (obj){
