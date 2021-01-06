@@ -138,17 +138,13 @@ function AbilityCircle(cN){
 
 /*======================Portfolio============================*/
 function popLayerEffect(mainAddr, target){
-	var pch = true;
-
 	historyPush({}, 'openedLayer', '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
 	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
 
 	$('.p-layer-bg').click(function(e){
-		if(pch){
-			window.history.go(-1);
-			pch = false;} }); }
+			window.history.go(-1); }); }
 /*======================/Portfolio============================*/
 
 
