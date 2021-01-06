@@ -95,6 +95,8 @@ $( document ).ready(function() {
 	$('a[href="#"]').click(function(e){
 		e.preventDefault(); });
 
+	$('.p-layer-bg').click(function(e){
+			window.history.go(-1); }); 
 	historyControll();
 });
 /*======================/Init Function============================*/
@@ -141,10 +143,7 @@ function popLayerEffect(mainAddr, target){
 	historyPush({}, target, '/' + target);
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
-	$('.p-layer-container').load(mainAddr + '/' +target + '.html');
-
-	$('.p-layer-bg').click(function(e){
-			window.history.go(-1); }); }
+	$('.p-layer-container').load(mainAddr + '/' +target + '.html'); }
 /*======================/Portfolio============================*/
 
 
