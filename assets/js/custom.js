@@ -213,8 +213,8 @@ function historyReplace(state, title, addr){
 	history.replaceState(state, title, addr); }
 
 function historyControll(){
-		if($('.p-layer').hasClass('dpb')){
 			window.onpopstate = history.onpushstate = function(e){
-				$('.p-layer-container').empty();
-				$('.p-layer').removeClass('dpb');
-				$('body').removeClass('ofh'); } } }
+				if($('.p-layer').hasClass('dpb')){
+					$('.p-layer-container').empty();
+					$('.p-layer').removeClass('dpb');
+					$('body').removeClass('ofh'); } } }
