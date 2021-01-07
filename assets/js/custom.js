@@ -149,11 +149,11 @@ function popUpLayer(mainAddr, array, filters){
 
 	for(var f in filters) {
 		if(filters[f] == 'ALL'){
-			$(".gallery-filter").append('<a class="filter-button filter-button-active" data-filter="' + filters[f].toLowerCase() + '">"' + filters[f] + '"</a>'); }
-		$(".gallery-filter").append('<a class="filter-button" data-filter="' + filters[f].toLowerCase() + '">"' + filters[f] + '"</a>'); } 
+			$(".gallery-filter").append('<a class="filter-button filter-button-active" data-filter="' + filters[f].toLowerCase() + '">' + filters[f] + '</a>'); }
+		$(".gallery-filter").append('<a class="filter-button" data-filter="' + filters[f].toLowerCase() + '">' + filters[f] + '</a>'); } 
 
 	for(var o in array) {
-		$(".p-layer-container").append('<div class="gallery-item filter "' + array[o].filterName +'" show"><img src="https://mpph.github.io/assets/' + array[o].link + '"/></div>'); } }
+		$(".p-layer-container").append('<div class="gallery-item filter ' + array[o].filterName +' show"><img src="https://mpph.github.io/assets/' + array[o].link + '"/></div>'); } }
 /*======================/Portfolio-PopUpLayer-Gallery============================*/
 /*======================Portfolio-PopUpLayer-Gallery-Controll-&-LightBox-Controll============================*/
 function galleryControll(){
