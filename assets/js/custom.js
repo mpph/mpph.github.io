@@ -86,7 +86,7 @@ $( document ).ready(function() {
 		var target ='';
 
 		if($(this).hasClass('p-designs')) {
-			popUpLayer(mainAddr, designArraym, designFilterArray);
+			popUpLayer(mainAddr, designArray, designFilterArray);
 		} else if ($(this).hasClass('p-animations')) {
 			popUpLayer(mainAddr, animArray, animFilterArray);
 		} else if ($(this).hasClass('p-videos')) {
