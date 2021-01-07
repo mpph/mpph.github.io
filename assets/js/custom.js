@@ -150,7 +150,7 @@ function popUpLayer(mainAddr, array, filters){
 	for(var f in filters) {
 		if(filters[f] == 'ALL'){
 			$(".gallery-filter").append('<a class="filter-button filter-button-active" data-filter="' + filters[f].toLowerCase() + '">' + filters[f] + '</a>'); 
-			break; }
+			continue; }
 		$(".gallery-filter").append('<a class="filter-button" data-filter="' + filters[f].toLowerCase() + '">' + filters[f] + '</a>'); } 
 
 	for(var o in array) {
