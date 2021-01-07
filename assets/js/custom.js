@@ -91,7 +91,7 @@ $( document ).ready(function() {
 			popUpLayer(mainAddr, animArray, animFilterArray);
 		} else if ($(this).hasClass('p-videos')) {
 			popUpLayer(mainAddr, videoArray, videoFilterArray); } });
-	galleryControll();
+	
 
 	/* contact effect event */
 	contactCardMouseEffect(); 
@@ -154,7 +154,9 @@ function popUpLayer(mainAddr, array, filters){
 		$(".gallery-filter").append('<a class="filter-button" data-filter="' + filters[f].toLowerCase() + '">' + filters[f] + '</a>'); } 
 
 	for(var o in array) {
-		$(".p-layer-container").append('<div class="gallery-item filter ' + array[o].filterName +' show"><img src="https://mpph.github.io/assets/' + array[o].link + '"/></div>'); } }
+		$(".gallery-grid").append('<div class="gallery-item filter ' + array[o].filterName +' show"><img src="https://mpph.github.io/assets/' + array[o].link + '"/></div>'); }
+		
+	galleryControll(); }
 /*======================/Portfolio-PopUpLayer-Gallery============================*/
 /*======================Portfolio-PopUpLayer-Gallery-Controll-&-LightBox-Controll============================*/
 function galleryControll(){
