@@ -115,7 +115,7 @@ $( document ).ready(function() {
 /*======================ProgressLoading============================*/
 function screenOut(){
 	$('body').addClass('ofh');
-	$('.progress-screen').fadeOut(2000); 
+	$('.progress-screen').fadeOut(2500); 
 	$('body').removeClass('ofh'); }
 /*======================/ProgressLoading============================*/
 
@@ -275,7 +275,8 @@ function historyControll(){
 
 	window.onpopstate = history.onpushstate = function(e){
 		if($('.p-layer').hasClass('dpb') && !($('.p-layer-lightbox').hasClass('dpb'))){
-			$('.p-layer-container').empty();
+			$('.gallery-filter').empty();
+			$('.gallery-grid').empty();
 			$('.p-layer').removeClass('dpb');
 			$('body').removeClass('ofh'); 
 		}else if($('.lightbox').hasClass('dpb')){
