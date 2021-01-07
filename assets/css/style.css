@@ -1025,6 +1025,121 @@ ul, ol {
 		background-color: #fff;
 		overflow-Y: scroll;	}
 
+/*===== PopLayer Gallery Style =====*/
+.gallery-filter {
+	border: 1px solid #F1F1F1;
+	border-radius: 20px;
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+	margin: 30px 0; }
+
+		.gallery-filter .filter-button {
+			display: inline-block;
+			padding: 10px 23px;
+			border: none;
+			color: #9B9B9B;
+			letter-spacing: 0;
+			font-size: 13px;
+			cursor: pointer;
+			font-weight: 300; }
+
+			@media only screen and (max-width: 433px) {
+				.portfolio-filter .filter-button {
+					padding: 10px 12px; } }
+
+		.gallery-filter .filter-button:hover {
+			background: #2E52C2;
+			border-radius: 20px;
+			color: #fff;
+			box-shadow: 0 2px 4px rgba(0,0,0,.3); }
+
+		.portfolio-filter .filter-button:focus {
+			outline:0; }
+
+		.filter-button-active {
+			background: #2E52C2;
+			border-radius: 20px;
+			color: #fff !important;
+			box-shadow:0 2px 4px rgba(0,0,0,.3); }
+
+.gallery-grid {
+	display: flex;
+	width: 100%;
+	margin: 0 auto;
+	justify-content: center;
+	flex-flow: row wrap;
+	align-content: flex-start; }
+
+		.gallery-item {
+			width: 28%;
+			height: 370px;
+			margin: 7px;
+			box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+			overflow: hidden; }
+			@media only screen and (max-width: 992px) {
+				.gallery-item {
+					height: 270px; } }
+			@media only screen and (max-width: 769px) {
+				.gallery-item {
+					height: 170px; } }
+			@media only screen and (max-width: 369px) {
+				.gallery-item {
+					width: 26%;
+					height: 150px; } }
+
+		.gallery-item img {
+			width: 100%;
+			height: 100%;
+			background-color: transparent;
+			object-fit: cover;
+			object-position: center;
+			flex: auto;
+			transition: transform ease-in-out 300ms; }
+
+			.gallery-item img:hover {
+				transform: scale(1.15); }
+
+/*===== PopLayer Gallery LightBox Style =====*/
+.p-layer-lightbox {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%; }
+	
+	.dark {
+		background:rgba(0,0,0,.6);
+		width:100%;
+		height:100%;
+		z-index: -1; }
+
+	.lightbox {
+		position: relative;
+		top:0;
+		left:0;
+		bottom: 0;
+		right: 0;
+		margin: auto;
+		width: 90%;
+		height: 90%;
+		background-size: contain;
+		background-position: center center;
+		background-repeat: no-repeat;
+		transition: all .3s; }
+
+	.prev {
+		position: fixed;
+		top: 42%;
+		left: 1%;
+		color: rgba(255,255,255,.6);
+		font-size: 80px; }
+
+	.next {
+		position: fixed;
+		top: 42%;
+		right: 1%;
+		color: rgba(255,255,255,.6);
+		font-size: 80px; }
 
 /*=====etc effect Style =====*/
 .anim {
