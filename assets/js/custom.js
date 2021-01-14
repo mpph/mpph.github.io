@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	var mainAddr = 'https://mpph.github.io';
-	var designFilterArray = ['ALL', 'DETAIL', 'LOGO', 'PACKAGE'];
+	var designFilterArray = ['ALL', 'WEB', 'DETAIL', 'CARD', 'LOGO', 'PACKAGE'];
 	var animFilterArray = ['ALL', 'CSS', 'SVG', 'CANVAS'];
 	var videoFilterArray = ['ALL', 'CINEMA', 'INTRO', 'MOTION'];
 	var designArray = [{filterName:'', link:''},{filterName:'', link:''}];
