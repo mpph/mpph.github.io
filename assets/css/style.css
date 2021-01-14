@@ -24,6 +24,11 @@ input, button, submit {
 	border:none; 
 	background-color: transparent;
 	} 
+input::placeholder,
+textarea::placeholder{
+  color: red;
+  opacity: 1; }
+
 a:hover {
 	text-decoration: none !important; }
 
@@ -50,6 +55,8 @@ ul, ol {
 	margin: 0;
 	padding: 0;
 	list-style-type: none; }
+
+
 
 .content-main {
 	margin-top: 20%; }
@@ -916,27 +923,51 @@ ul, ol {
 	width: 90%;
 	height: 30px;
 	margin-top: 5%;
+	position: relative;
 	background-color: transparent;
 	border: 1px solid rgba( 0, 0, 0, .5);
 	border-radius: 2px;
-	font-size: 1em;
 	cursor: pointer;
-	transition: transform ease-in 0.1s; }
-
-	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit:after {
-		content:'Send';	}
+	overflow: hidden; }
 
 	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit:hover {
 		color: #fff;
 		background: #1ECD97;
 		text-align: center; }
 
-	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit:active {
-		transform: scale(0.9); }
+	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit.active {
+		transform: scaleY(.5);
+		transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88); }
+	
+	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit.finished {
+		transform: scaleY(1);
+		transition: 0.4s cubic-bezier(0.35, -0.77, 0.67, 1.88); }
 
-	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit.sand:after{
-		content:'';
-	}
+	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit .submit_text.active {
+		transform: translateY(-350%) scale(0);
+		transition: 0.35s cubic-bezier(0.34, -0.61, 1, 0.64); }
+	
+	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit .submit_loader {
+		position: absolute;
+		width: calc(0% - 4px);
+		height: calc(100% - 4px);
+		background-color: #fff;
+		left: 2px;
+		top: 2px;
+		border-radius: 2px; }
+	
+	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit .submit_loader.active {
+		width: calc(100% - 4px);
+		transition: 1.3s ease-in-out;
+		transition-delay: 0.5s; }
+	
+	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit .submit_done {
+		color: #333ddd;
+		margin-top: -23px;
+		transform: scale(0); }
+	.footer-area .footer-contact .contact-container .contact-card .contact-block .contact-content .contact-me .message_submit .submit_done.active {
+		transform: scale(1);
+		transition: 0.4s cubic-bezier(0.34, -0.61, 1, 0.64); }
 
 .footer-area .footer-contact .contact-info {
 	width: 100%;
