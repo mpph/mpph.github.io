@@ -26,7 +26,7 @@ input, button, submit {
 	} 
 input::placeholder,
 textarea::placeholder{
-  color: red;
+  color: green;
   opacity: 1; }
 
 a:hover {
