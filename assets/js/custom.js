@@ -94,7 +94,8 @@ $( document ).ready(function() {
 	
 
 	/* contact effect event */
-	contactCardMouseEffect(); 
+	contactCardMouseEffect();
+	contactSendButton();
 
 	/* etc */
 	$('a[href="#"]').click(function(e){
@@ -181,7 +182,7 @@ function galleryControll(){
 			$('.filter').filter('.' + value).addClass('show'); } });
 			
 	$('.gallery-grid .show').click(function(e) {
-		history.pushState({}, 'lightbox', '');
+		historyPush({}, 'lightbox', '');
 			
 		index = $('.gallery-grid .show').index(this);
 		length = $('.gallery-grid .show').children().length - 1;
@@ -240,6 +241,25 @@ $('.contact-block').on('mousemove', function(e) {
 $('.contact-block').on('mouseleave', function(e) {
 	mouse.X   = mouse.CX;
 	mouse.Y   = mouse.CY; }); }
+
+function contactSendButton(){
+	$(".message_submit").on('click', function(){
+	$(".submit_text").addClass("active");
+	$(".message_submit").addClass("active");
+	$(".submit_loader").addClass("active");
+
+	$(".submit_done").delay(1600).queue(function(){
+        $(this).addClass("active").clearQueue(); });
+	
+	$(".message_submit").delay(1700).queue(function(){
+        $(this).addClass("finished").clearQueue(); });
+  
+	setTimeout(function() {
+		$(".submit_text").removeClass("active");
+		$(".submit_loader").removeClass("active");
+		$(".submit_done").removeClass("active");
+		$(".message_submit").removeClass("active");
+		$(".message_submit").removeClass("finished"); },3000); }); }
 /*======================/Contact============================*/
 
 
