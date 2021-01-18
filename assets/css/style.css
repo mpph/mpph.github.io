@@ -1136,16 +1136,17 @@ ul, ol {
 	display: none;
 	position: fixed;
 	width: 100%;
-	height: 100%; }
+	height: 100%;
+	z-index: 200; }
 	
 	.dark {
+		position: fixed;
 		background:rgba(0,0,0,.6);
 		width:100%;
-		height:100%;
-		z-index: -1; }
+		height:100%; }
 
 	.lightbox {
-		position: relative;
+		position: fixed;
 		top:0;
 		left:0;
 		bottom: 0;
