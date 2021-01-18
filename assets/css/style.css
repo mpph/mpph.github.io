@@ -1173,6 +1173,10 @@ ul, ol {
 		color: rgba(255,255,255,.6);
 		font-size: 80px; }
 
+		.lightbox-arrow:hover {
+			color: rgba(255, 194, 153,.8);
+		}
+
 /*=====etc effect Style =====*/
 .anim {
 	opacity: 0;
