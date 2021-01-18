@@ -298,5 +298,5 @@ function historyControll(){
 			$('.gallery-grid').empty();
 			$('.p-layer').removeClass('dpb');
 			$('body').removeClass('ofh'); 
-		}else if($('.lightbox').hasClass('dpb')){
-				$('.lightbox').removeClass('dpb'); } } }
+		}else if($('.p-layer-lightbox').hasClass('dpb')){
+				$('.p-layer-lightbox').removeClass('dpb'); } } }
