@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 	var mainAddr = 'https://mpph.github.io';
-	var designFilterArray = ['ALL', 'WEB', 'DETAIL', 'CARD', 'LOGO', 'PACKAGE'];
+	var designFilterArray = ['ALL', 'WEB', 'DETAIL', 'CARD', 'BANNER', 'LOGO', 'PACKAGE'];
 	var animFilterArray = ['ALL', 'CSS', 'SVG', 'CANVAS'];
 	var videoFilterArray = ['ALL', 'CINEMA', 'INTRO', 'MOTION'];
-	var designArray = [{filterName:'', link:''},{filterName:'', link:''}];
+	var designArray = [{filterName:'card', link:'cardTravel1_900x900.jpg'},{filterName:'banner', link:'FashionSaleBanner1_all.jpg'}];
 	var animArray =  [{filterName:'', link:''},{filterName:'', link:''}];
 	var videoArray =  [{filterName:'', link:''},{filterName:'', link:''}];
 	
@@ -83,14 +83,13 @@ $( document ).ready(function() {
 	/* Portfolio event */
 	$('.p-click').click(function(e){
 		e.preventDefault();
-		var target ='';
 
 		if($(this).hasClass('p-designs')) {
-			popUpLayer(mainAddr, designArray, designFilterArray);
+			popUpLayer(mainAddr, 'designs', designArray, designFilterArray);
 		} else if ($(this).hasClass('p-animations')) {
-			popUpLayer(mainAddr, animArray, animFilterArray);
+			popUpLayer(mainAddr, 'anims', animArray, animFilterArray);
 		} else if ($(this).hasClass('p-videos')) {
-			popUpLayer(mainAddr, videoArray, videoFilterArray); } });
+			popUpLayer(mainAddr, 'videos', videoArray, videoFilterArray); } });
 	
 
 	/* contact effect event */
@@ -143,7 +142,7 @@ function AbilityCircle(cN){
 
 
 /*======================Portfolio-PopUpLayer-Gallery============================*/
-function popUpLayer(mainAddr, array, filters){
+function popUpLayer(mainAddr, taget, array, filters){
 	historyPush({}, 'openedLayer', '');
 	$('.p-layer').addClass('dpb');
 	$('body').addClass('ofh');
@@ -155,7 +154,7 @@ function popUpLayer(mainAddr, array, filters){
 		$(".gallery-filter").append('<a class="filter-button" data-filter="' + filters[f].toLowerCase() + '">' + filters[f] + '</a>'); } 
 
 	for(var o in array) {
-		$(".gallery-grid").append('<div class="gallery-item filter ' + array[o].filterName +' show"><img src="https://mpph.github.io/assets/' + array[o].link + '"/></div>'); }
+		$(".gallery-grid").append('<div class="gallery-item filter ' + array[o].filterName + ' show"><img src="https://mpph.github.io/assets/pf'+ taget + '/' + array[o].filterName +'/'+ array[o].link + '"/></div>'); }
 		
 	galleryControll(); }
 /*======================/Portfolio-PopUpLayer-Gallery============================*/
