@@ -1,9 +1,9 @@
 $( document ).ready(function() {
 	var mainAddr = 'https://mpph.github.io';
-	var designFilterArray = ['ALL', 'WEB', 'APP', 'DETAIL', 'CARD', 'BANNER', 'LOGO', 'PACKAGE'];
+	var designFilterArray = ['ALL', 'WEB', 'APP', 'DETAIL', 'CARD', 'POSTER', 'BANNER', 'LOGO', 'PACKAGE'];
 	var animFilterArray = ['ALL', 'CSS', 'SVG', 'CANVAS'];
 	var videoFilterArray = ['ALL', 'CINEMA', 'INTRO', 'MOTION'];
-	var designArray = [{filterName:'card', link:'cardTravel1_900x900.jpg'},{filterName:'banner', link:'FashionSaleBanner1_all.jpg'},{filterName:'web', link:'salon_all.jpg'},{filterName:'card', link:'cardVirus1_800x1200.jpg'}];
+	var designArray = [{filterName:'card', link:'cardTravel1_900x900.jpg'},{filterName:'banner', link:'FashionSaleBanner1_all.jpg'},{filterName:'web', link:'salon_all.jpg'},{filterName:'poster', link:'cardVirus1_800x1200.jpg'}];
 	var animArray =  [{filterName:'', link:''},{filterName:'', link:''}];
 	var videoArray =  [{filterName:'', link:''},{filterName:'', link:''}];
 	
