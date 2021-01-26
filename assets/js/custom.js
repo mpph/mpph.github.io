@@ -3,7 +3,7 @@ $( document ).ready(function() {
 	var designFilterArray = ['ALL', 'WEB', 'APP', 'DETAIL', 'CARD', 'POSTER', 'BANNER', 'LOGO', 'PACKAGE'];
 	var animFilterArray = ['ALL', 'CSS', 'SVG', 'CANVAS'];
 	var videoFilterArray = ['ALL', 'CINEMA', 'INTRO', 'MOTION'];
-	var designArray = [{filterName:'card', link:'cardTravel1_900x900.jpg'},{filterName:'banner', link:'FashionSaleBanner1_all.jpg'},{filterName:'web', link:'salon_all.jpg'},{filterName:'poster', link:'cardVirus1_800x1200.jpg'}];
+	var designArray = [{filterName:'card', link:'cardTravel1_900x900.jpg'},{filterName:'banner', link:'FashionSaleBanner1_all.jpg'},{filterName:'web', link:'salon_all.jpg'},{filterName:'poster', link:'posterVirus1_600x840.jpg'}];
 	var animArray =  [{filterName:'', link:''},{filterName:'', link:''}];
 	var videoArray =  [{filterName:'', link:''},{filterName:'', link:''}];
 	
