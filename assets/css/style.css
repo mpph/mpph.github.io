@@ -650,8 +650,10 @@ ul, ol {
 /*===== Portfolio Style =====*/
 .portfolio-area .p-title {
 	margin-bottom: 30px; }
+
 .portfolio-area .p-designs{
 	background-image: url(https://mpph.github.io/assets/img/design_bg_1080x1080.jpg);
+	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat; }
 
