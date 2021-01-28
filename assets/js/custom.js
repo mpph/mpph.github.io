@@ -4,8 +4,8 @@ $( document ).ready(function() {
 	var animFilterArray = ['ALL', 'CSS', 'SVG', 'CANVAS'];
 	var videoFilterArray = ['ALL', 'CINEMA', 'INTRO', 'MOTION'];
 	var designArray = [{filterName:'card', link:'cardTravel1_900x900.jpg'},{filterName:'banner', link:'FashionSaleBanner1_all.jpg'},{filterName:'web', link:'salon_all.jpg'},{filterName:'poster', link:'posterVirus1_600x840.jpg'}, {filterName:'banner', link:'FashionSaleBanner2_1080x1080.jpg'}];
-	var animArray =  [{filterName:'', link:''},{filterName:'', link:''}];
-	var videoArray =  [{filterName:'', link:''},{filterName:'', link:''}];
+	var animArray =  [];
+	var videoArray =  [];
 	
 	/* Progress */
 	screenOut();
@@ -153,8 +153,11 @@ function popUpLayer(mainAddr, taget, array, filters){
 			continue; }
 		$(".gallery-filter").append('<a class="filter-button" data-filter="' + filters[f].toLowerCase() + '">' + filters[f] + '</a>'); } 
 
-	for(var o in array) {
-		$(".gallery-grid").append('<div class="gallery-item filter ' + array[o].filterName + ' show"><img src="https://mpph.github.io/assets/pf/'+ taget + '/' + array[o].filterName +'/'+ array[o].link + '"/></div>'); }
+		if(array.length < 1){
+			
+		} else {
+			for(var o in array) {
+				$(".gallery-grid").append('<div class="gallery-item filter ' + array[o].filterName + ' show"><img src="https://mpph.github.io/assets/pf/'+ taget + '/' + array[o].filterName +'/'+ array[o].link + '"/></div>'); } }
 		
 	galleryControll(); }
 /*======================/Portfolio-PopUpLayer-Gallery============================*/
