@@ -154,7 +154,7 @@ function popUpLayer(mainAddr, taget, array, filters){
 		$(".gallery-filter").append('<a class="filter-button" data-filter="' + filters[f].toLowerCase() + '">' + filters[f] + '</a>'); } 
 
 		if(array.length < 1){
-			
+			$(".gallery-grid").css('background-image':'url(https://mpph.github.io/assets/img/ready.jpg)');
 		} else {
 			for(var o in array) {
 				$(".gallery-grid").append('<div class="gallery-item filter ' + array[o].filterName + ' show"><img src="https://mpph.github.io/assets/pf/'+ taget + '/' + array[o].filterName +'/'+ array[o].link + '"/></div>'); } }
