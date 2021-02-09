@@ -20,10 +20,11 @@ a:focus,
 button:focus {
 	text-decoration: none !important;
 	outline: none !important; }
-input, button, submit { 
-	border:none; 
-	background-color: transparent;
-	} 
+
+input, button{ 
+	border: none; 
+	background-color: transparent; } 
+
 input::placeholder,
 textarea::placeholder{
   color: green;
@@ -59,7 +60,7 @@ ul, ol {
 
 
 .content-main {
-	margin-top: 20%; }
+	margin-top: 10%; }
 
 .content-sub {
 	margin-top: 2%; }
