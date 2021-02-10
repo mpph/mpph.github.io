@@ -266,7 +266,7 @@ function contactSendButton(){
 					$(".submit_loader").removeClass("active");
 					$(".submit_done").removeClass("active");
 					$(".message_submit").removeClass("active");
-					$(".message_submit").removeClass("finished"); },3000); }); },
+					$(".message_submit").removeClass("finished"); },3000); },
 			error: function(){
 					if($('.contact-name').length < 0){
 						$('.contact-name').addClass("contact-error");
