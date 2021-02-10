@@ -246,22 +246,35 @@ $('.contact-block').on('mouseleave', function(e) {
 
 function contactSendButton(){
 	$(".message_submit").on('click', function(){
-	$(".submit_text").addClass("active");
-	$(".message_submit").addClass("active");
-	$(".submit_loader").addClass("active");
+		$.ajax({ 
+			url: '',
+			type:'post',
+			data:$('.contact-me').serializeArray(),
+			success: function(){
+				$(".submit_text").addClass("active");
+				$(".message_submit").addClass("active");
+				$(".submit_loader").addClass("active");
 
-	$(".submit_done").delay(1600).queue(function(){
-        $(this).addClass("active").clearQueue(); });
-	
-	$(".message_submit").delay(1700).queue(function(){
-        $(this).addClass("finished").clearQueue(); });
-  
-	setTimeout(function() {
-		$(".submit_text").removeClass("active");
-		$(".submit_loader").removeClass("active");
-		$(".submit_done").removeClass("active");
-		$(".message_submit").removeClass("active");
-		$(".message_submit").removeClass("finished"); },3000); }); }
+				$(".submit_done").delay(1600).queue(function(){
+					$(this).addClass("active").clearQueue(); });
+				
+				$(".message_submit").delay(1700).queue(function(){
+					$(this).addClass("finished").clearQueue(); });
+			  
+				setTimeout(function() {
+					$(".submit_text").removeClass("active");
+					$(".submit_loader").removeClass("active");
+					$(".submit_done").removeClass("active");
+					$(".message_submit").removeClass("active");
+					$(".message_submit").removeClass("finished"); },3000); }); },
+			error: function(){
+					if($('.contact-name').length < 0){
+						$('.contact-name').addClass("contact-error");
+					}else if($('.contact-email').length < 0){
+						$('.contact-email').addClass("contact-error");
+					}else if($('.contact-message').length < 0){
+						$('.contact-message').addClass("contact-error");
+					} }); }
 /*======================/Contact============================*/
 
 
