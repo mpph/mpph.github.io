@@ -247,7 +247,7 @@ $('.contact-block').on('mouseleave', function(e) {
 function contactSendButton(){
 	$(".message_submit").on('click', function(){
 		$.ajax({ 
-			url: '',
+			url: 'https://script.google.com/macros/s/AKfycbx4RwubtFY7HWSf5y0-AZml5Fg_YnpZsCoh2OikALYxv2iN-ErH/exec',
 			type:'post',
 			data:$('.contact-me').serializeArray(),
 			success: function(){
