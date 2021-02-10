@@ -25,11 +25,6 @@ input, button{
 	border: none; 
 	background-color: transparent; } 
 
-input::placeholder,
-textarea::placeholder{
-  color: green;
-  opacity: 1; }
-
 a:hover {
 	text-decoration: none !important; }
 
@@ -1194,7 +1189,11 @@ ul, ol {
 			color: rgba(255, 194, 153,.8);
 		}
 
-/*=====etc effect Style =====*/
+/*=====etc & effect Style =====*/
+.contact-error::placeholder {
+	color: red;
+}
+
 .anim {
 	opacity: 0;
 	transition: opacity 1s ease-in-out; } 
