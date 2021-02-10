@@ -250,7 +250,7 @@ function contactSendButton(){
 			url: 'https://script.google.com/macros/s/AKfycbx4RwubtFY7HWSf5y0-AZml5Fg_YnpZsCoh2OikALYxv2iN-ErH/exec',
 			type: 'post',
 			dataType: "json",
-			data: $('#contact-me').serializeObject(),
+			data: $('#contact-me').serializeArray(),
 			success: function(){
 				$(".submit_text").addClass("active");
 				$(".message_submit").addClass("active");
