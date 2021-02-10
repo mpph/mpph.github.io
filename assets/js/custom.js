@@ -274,7 +274,7 @@ function contactSendButton(){
 						$('.contact-email').addClass("contact-error");
 					}else if($('.contact-message').length < 0){
 						$('.contact-message').addClass("contact-error");
-					} }); }
+					} } }); }); }
 /*======================/Contact============================*/
 
 
